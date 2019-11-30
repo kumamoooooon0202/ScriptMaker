@@ -20,5 +20,37 @@ namespace ScriptMaker
             Scroll,
             DisplayModeMax
         }        
+
+        public enum FlagCompareType
+        {
+            Equal = 0,      // =
+            NotEqual,       // !=
+            Greater,        // >
+            GreaterThan,    // >=
+            Less,           // <
+            LessThan,       // <=
+            And,            // &&
+            Or,             // ||
+            FlagCompareTypeMax
+        }
+
+        public enum SoundType
+        {
+            Play = 0,
+            Stop,
+            FadeIn,
+            FadeOut,
+            SoundTypeMax
+        }
+
+        public enum SoundLoopType
+        {
+            Continue = 0,
+            Start,
+            SoundLoopTypeMax
+        }
+
+
     }
+
 }
