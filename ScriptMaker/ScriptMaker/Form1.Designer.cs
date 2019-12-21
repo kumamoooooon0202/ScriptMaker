@@ -44,11 +44,10 @@
             this.LabelTextBox = new System.Windows.Forms.TextBox();
             this.jumpPage = new System.Windows.Forms.TabPage();
             this.JumpAgreeButton = new System.Windows.Forms.Button();
-            this.JumpTextBox = new System.Windows.Forms.TextBox();
             this.selectPage = new System.Windows.Forms.TabPage();
             this.SelectGroupBox = new System.Windows.Forms.GroupBox();
             this.SelectAgreeButton = new System.Windows.Forms.Button();
-            this.SelecTextBox = new System.Windows.Forms.TextBox();
+            this.SelectTextBox = new System.Windows.Forms.TextBox();
             this.ifPage = new System.Windows.Forms.TabPage();
             this.IfAgreeButton = new System.Windows.Forms.Button();
             this.IfFlagNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -118,6 +117,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.JumpComboBox = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.ScriptTabControl.SuspendLayout();
             this.messagePage.SuspendLayout();
@@ -253,6 +253,7 @@
             this.NameAgreeButton.TabIndex = 1;
             this.NameAgreeButton.Text = "登録";
             this.NameAgreeButton.UseVisualStyleBackColor = true;
+            this.NameAgreeButton.Click += new System.EventHandler(this.NameAgreeButton_Click);
             // 
             // NameTextBox
             // 
@@ -281,6 +282,7 @@
             this.LabelAgreeButton.TabIndex = 3;
             this.LabelAgreeButton.Text = "登録";
             this.LabelAgreeButton.UseVisualStyleBackColor = true;
+            this.LabelAgreeButton.Click += new System.EventHandler(this.LabelAgreeButton_Click);
             // 
             // LabelTextBox
             // 
@@ -291,8 +293,8 @@
             // 
             // jumpPage
             // 
+            this.jumpPage.Controls.Add(this.JumpComboBox);
             this.jumpPage.Controls.Add(this.JumpAgreeButton);
-            this.jumpPage.Controls.Add(this.JumpTextBox);
             this.jumpPage.Location = new System.Drawing.Point(4, 40);
             this.jumpPage.Name = "jumpPage";
             this.jumpPage.Size = new System.Drawing.Size(485, 566);
@@ -309,19 +311,13 @@
             this.JumpAgreeButton.TabIndex = 5;
             this.JumpAgreeButton.Text = "登録";
             this.JumpAgreeButton.UseVisualStyleBackColor = true;
-            // 
-            // JumpTextBox
-            // 
-            this.JumpTextBox.Location = new System.Drawing.Point(7, 17);
-            this.JumpTextBox.Name = "JumpTextBox";
-            this.JumpTextBox.Size = new System.Drawing.Size(472, 19);
-            this.JumpTextBox.TabIndex = 4;
+            this.JumpAgreeButton.Click += new System.EventHandler(this.JumpAgreeButton_Click);
             // 
             // selectPage
             // 
             this.selectPage.Controls.Add(this.SelectGroupBox);
             this.selectPage.Controls.Add(this.SelectAgreeButton);
-            this.selectPage.Controls.Add(this.SelecTextBox);
+            this.selectPage.Controls.Add(this.SelectTextBox);
             this.selectPage.Location = new System.Drawing.Point(4, 40);
             this.selectPage.Name = "selectPage";
             this.selectPage.Size = new System.Drawing.Size(485, 566);
@@ -348,13 +344,15 @@
             this.SelectAgreeButton.Text = "登録";
             this.SelectAgreeButton.UseVisualStyleBackColor = true;
             // 
-            // SelecTextBox
+            // SelectTextBox
             // 
-            this.SelecTextBox.Location = new System.Drawing.Point(4, 4);
-            this.SelecTextBox.Multiline = true;
-            this.SelecTextBox.Name = "SelecTextBox";
-            this.SelecTextBox.Size = new System.Drawing.Size(478, 249);
-            this.SelecTextBox.TabIndex = 0;
+            this.SelectTextBox.AllowDrop = true;
+            this.SelectTextBox.Location = new System.Drawing.Point(4, 4);
+            this.SelectTextBox.Multiline = true;
+            this.SelectTextBox.Name = "SelectTextBox";
+            this.SelectTextBox.Size = new System.Drawing.Size(478, 249);
+            this.SelectTextBox.TabIndex = 0;
+            this.SelectTextBox.TextChanged += new System.EventHandler(this.SelecTextBox_TextChanged);
             // 
             // ifPage
             // 
@@ -1011,6 +1009,15 @@
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
             // 
+            // JumpComboBox
+            // 
+            this.JumpComboBox.FormattingEnabled = true;
+            this.JumpComboBox.Location = new System.Drawing.Point(7, 17);
+            this.JumpComboBox.Name = "JumpComboBox";
+            this.JumpComboBox.Size = new System.Drawing.Size(472, 20);
+            this.JumpComboBox.TabIndex = 6;
+            this.JumpComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1034,7 +1041,6 @@
             this.labelPage.ResumeLayout(false);
             this.labelPage.PerformLayout();
             this.jumpPage.ResumeLayout(false);
-            this.jumpPage.PerformLayout();
             this.selectPage.ResumeLayout(false);
             this.selectPage.PerformLayout();
             this.ifPage.ResumeLayout(false);
@@ -1100,10 +1106,9 @@
         private System.Windows.Forms.Button LabelAgreeButton;
         private System.Windows.Forms.TextBox LabelTextBox;
         private System.Windows.Forms.Button JumpAgreeButton;
-        private System.Windows.Forms.TextBox JumpTextBox;
         private System.Windows.Forms.GroupBox SelectGroupBox;
         private System.Windows.Forms.Button SelectAgreeButton;
-        private System.Windows.Forms.TextBox SelecTextBox;
+        private System.Windows.Forms.TextBox SelectTextBox;
         private System.Windows.Forms.Button KeyWaitAgreeButton;
         private System.Windows.Forms.Button TimeWaitAgreeButton;
         private System.Windows.Forms.TextBox textBox5;
@@ -1157,6 +1162,7 @@
         private System.Windows.Forms.ComboBox FlagComboBox;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ComboBox JumpComboBox;
     }
 }
 
