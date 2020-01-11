@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,6 +50,10 @@ namespace ScriptMaker
         private void Form1_Load(object sender, EventArgs e)
         {
             // 最初に実行されるので必要な処理はここで行う
+            //foreach (var i in Enumerable.Range(0, 256))
+            //{
+            //    FlagComboBox.Items.Add("flag" + i.ToString("000"));
+            //}
         }
 
         private void ScriptListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -183,8 +188,14 @@ namespace ScriptMaker
         }
 
         
+        /// <summary>
+        /// 選択コマンドで文字の変更があった際に呼び出される
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SelecTextBox_TextChanged(object sender, EventArgs e)
         {
+            // 選択コマンドのテキストに書かれた行数を取得する
             var selectText = SelectTextBox.Text.Replace("\r\n", "\n");
             var str = selectText.Split('\n');
             var lineCount = selectText.Count();
@@ -225,6 +236,159 @@ namespace ScriptMaker
                     _selectComboBox[i].label.Text = SelectLabelConv(str[i]);
                 }
             }
+        }
+
+        /// <summary>
+        /// 選択コマンドの「登録」
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SelectAgreeButton_Click(object sender, EventArgs e)
+        {
+            // 選択テキストの行数取得
+            var selectText = SelectTextBox.Text.Replace("\r\n", "\n");
+            var str = selectText.Split('\n');
+            var lineCount = selectText.Count();
+            // 選択のクラスを準備
+            var selectModel = new SelectModel();
+            // テキスト行数分のJsonコマンドを取得
+            foreach (var i in Enumerable.Range(0, lineCount))
+            {
+                var selectMessage = new SelectModel.SelectMessage();
+                selectMessage.message = str[i];
+                var cBox = _selectComboBox[i].comboBox;
+                selectMessage.jump = cBox.Items[cBox.SelectedIndex].ToString();
+                selectModel.select_message.Add(selectMessage);
+            }
+            // Jsonに変更する
+            var jsonText = JsonConvert.SerializeObject(selectModel);
+            // 保存
+            SetCommandScript("select", jsonText);
+        }
+
+        /// <summary>
+        /// キー待ち
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void KeyWaitAgreeButton_Click(object sender, EventArgs e)
+        {
+            var keyWait = new KeyWaitModel();
+            var jsonText = JsonConvert.SerializeObject(keyWait);
+            // 保存
+            SetCommandScript("key_wait", jsonText);
+        }
+
+        /// <summary>
+        /// 時間待ち
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TimeWaitAgreeButton_Click(object sender, EventArgs e)
+        {
+            var waitModel = new WaitModel();
+            waitModel.timer = (float)WaitTimeNumericUpDown.Value;
+            var jsonText = JsonConvert.SerializeObject(waitModel);
+            // 保存
+            SetCommandScript("wait_time", jsonText);
+        }
+
+        /// <summary>
+        /// 終了コマンド
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EndAgreeButton_Click(object sender, EventArgs e)
+        {
+            var endModel = new EndModel();
+            var jsonText = JsonConvert.SerializeObject(endModel);
+            // 保存
+            SetCommandScript("end", jsonText);
+        }
+
+        /// <summary>
+        /// フラグの登録
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FlagAgreeButton_Click(object sender, EventArgs e)
+        {
+            var flagModel = new FlagModel();
+            AgreeFunctionWithComboBox("Flag", FlagComboBox, () =>
+            {
+                flagModel.name = FlagComboBox.Items[FlagComboBox.SelectedIndex].ToString();
+                flagModel.mode = (int)FlagNumericUpDown.Value;
+                return JsonConvert.SerializeObject(flagModel);
+            });
+        }
+
+
+        private void ScriptLoadFileSelectButton_Click(object sender, EventArgs e)
+        {
+            if(ScriptLoadOpenFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                var fileName = ScriptLoadOpenFileDialog.FileName;
+                ScriptLoadTextBox.Text = Path.GetFileName(fileName);
+            }
+        }
+
+        /// <summary>
+        /// スクリプトファイルの登録
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ScriptLoadAgreeButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(ScriptLoadTextBox.Text)) return;
+            var loadModel = new LoadModel();
+            loadModel.load_name = ScriptLoadTextBox.Text;
+            var jsonText = JsonConvert.SerializeObject(loadModel);
+            // 保存
+            SetCommandScript("load_script", jsonText);
+        }
+
+        /// <summary>
+        /// イベントの登録
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EventAgreeButton_Click(object sender, EventArgs e)
+        {
+            var eventModel = new EventModel();
+            AgreeFunctionWithComboBox("event", EventComboBox, () =>
+            {
+                eventModel.name = FlagComboBox.Items[FlagComboBox.SelectedIndex].ToString();
+                return JsonConvert.SerializeObject(eventModel);
+            });
+        }
+
+        private void AgreeFunctionWithComboBox(string name, ComboBox cbox, System.Func<string> callback)
+        {
+            // 登録が一件もない場合なにもしない
+            // 何も選択していない場合も何もしない
+            if (cbox.Items.Count == 0 || cbox.SelectedIndex < 0) return;
+            // 保存
+            SetCommandScript(name, callback);
+        }
+
+        private void ComboBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            ComboBox cbox = (ComboBox)sender;
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!cbox.Items.Contains(SeComboBox.Text))
+                    cbox.Items.Add(SeComboBox.Text);
+            }
+        }
+
+        private void SeAgreeButton_Click(object sender, EventArgs e)
+        {
+            var seModel = new SEModel();
+            AgreeFunctionWithComboBox("se", SeComboBox, () =>
+            {
+                seModel.name = SeComboBox.Items[SeComboBox.SelectedIndex].ToString();
+                return JsonConvert.SerializeObject(seModel);
+            });
         }
     }
 }

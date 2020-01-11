@@ -9,6 +9,6 @@ namespace ScriptMaker
     class LoadModel
     {
         // 読み込むファイル名
-        public string name = "";
+        public string load_name = "";
     }
 }

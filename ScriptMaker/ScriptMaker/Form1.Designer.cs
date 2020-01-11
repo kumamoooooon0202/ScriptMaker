@@ -43,6 +43,7 @@
             this.LabelAgreeButton = new System.Windows.Forms.Button();
             this.LabelTextBox = new System.Windows.Forms.TextBox();
             this.jumpPage = new System.Windows.Forms.TabPage();
+            this.JumpComboBox = new System.Windows.Forms.ComboBox();
             this.JumpAgreeButton = new System.Windows.Forms.Button();
             this.selectPage = new System.Windows.Forms.TabPage();
             this.SelectGroupBox = new System.Windows.Forms.GroupBox();
@@ -59,7 +60,6 @@
             this.KeyWaitAgreeButton = new System.Windows.Forms.Button();
             this.waiotPage = new System.Windows.Forms.TabPage();
             this.TimeWaitAgreeButton = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.endPage = new System.Windows.Forms.TabPage();
             this.EndAgreeButton = new System.Windows.Forms.Button();
             this.bgPage = new System.Windows.Forms.TabPage();
@@ -104,10 +104,8 @@
             this.BgmTextBox = new System.Windows.Forms.TextBox();
             this.sePage = new System.Windows.Forms.TabPage();
             this.SeAgreeButton = new System.Windows.Forms.Button();
-            this.SeTextBox = new System.Windows.Forms.TextBox();
             this.eventPage = new System.Windows.Forms.TabPage();
             this.EventAgreeButton = new System.Windows.Forms.Button();
-            this.EventTextBox = new System.Windows.Forms.TextBox();
             this.loadPage = new System.Windows.Forms.TabPage();
             this.ScriptLoadAgreeButton = new System.Windows.Forms.Button();
             this.ScriptLoadTextBox = new System.Windows.Forms.TextBox();
@@ -117,7 +115,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.JumpComboBox = new System.Windows.Forms.ComboBox();
+            this.WaitTimeNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.ScriptLoadFileSelectButton = new System.Windows.Forms.Button();
+            this.ScriptLoadOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.EventComboBox = new System.Windows.Forms.ComboBox();
+            this.SeComboBox = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.ScriptTabControl.SuspendLayout();
             this.messagePage.SuspendLayout();
@@ -140,6 +142,7 @@
             this.eventPage.SuspendLayout();
             this.loadPage.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WaitTimeNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -302,6 +305,15 @@
             this.jumpPage.Text = "ジャンプ";
             this.jumpPage.UseVisualStyleBackColor = true;
             // 
+            // JumpComboBox
+            // 
+            this.JumpComboBox.FormattingEnabled = true;
+            this.JumpComboBox.Location = new System.Drawing.Point(7, 17);
+            this.JumpComboBox.Name = "JumpComboBox";
+            this.JumpComboBox.Size = new System.Drawing.Size(472, 20);
+            this.JumpComboBox.TabIndex = 6;
+            this.JumpComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // JumpAgreeButton
             // 
             this.JumpAgreeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -343,6 +355,7 @@
             this.SelectAgreeButton.TabIndex = 6;
             this.SelectAgreeButton.Text = "登録";
             this.SelectAgreeButton.UseVisualStyleBackColor = true;
+            this.SelectAgreeButton.Click += new System.EventHandler(this.SelectAgreeButton_Click);
             // 
             // SelectTextBox
             // 
@@ -445,11 +458,12 @@
             this.KeyWaitAgreeButton.TabIndex = 3;
             this.KeyWaitAgreeButton.Text = "登録";
             this.KeyWaitAgreeButton.UseVisualStyleBackColor = true;
+            this.KeyWaitAgreeButton.Click += new System.EventHandler(this.KeyWaitAgreeButton_Click);
             // 
             // waiotPage
             // 
+            this.waiotPage.Controls.Add(this.WaitTimeNumericUpDown);
             this.waiotPage.Controls.Add(this.TimeWaitAgreeButton);
-            this.waiotPage.Controls.Add(this.textBox5);
             this.waiotPage.Location = new System.Drawing.Point(4, 40);
             this.waiotPage.Name = "waiotPage";
             this.waiotPage.Size = new System.Drawing.Size(485, 566);
@@ -466,13 +480,7 @@
             this.TimeWaitAgreeButton.TabIndex = 3;
             this.TimeWaitAgreeButton.Text = "登録";
             this.TimeWaitAgreeButton.UseVisualStyleBackColor = true;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(7, 17);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(472, 19);
-            this.textBox5.TabIndex = 2;
+            this.TimeWaitAgreeButton.Click += new System.EventHandler(this.TimeWaitAgreeButton_Click);
             // 
             // endPage
             // 
@@ -493,6 +501,7 @@
             this.EndAgreeButton.TabIndex = 3;
             this.EndAgreeButton.Text = "登録";
             this.EndAgreeButton.UseVisualStyleBackColor = true;
+            this.EndAgreeButton.Click += new System.EventHandler(this.EndAgreeButton_Click);
             // 
             // bgPage
             // 
@@ -825,6 +834,7 @@
             this.FlagComboBox.Name = "FlagComboBox";
             this.FlagComboBox.Size = new System.Drawing.Size(479, 20);
             this.FlagComboBox.TabIndex = 19;
+            this.FlagComboBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ComboBox_KeyDown);
             // 
             // FlagAgreeButton
             // 
@@ -835,6 +845,7 @@
             this.FlagAgreeButton.TabIndex = 18;
             this.FlagAgreeButton.Text = "登録";
             this.FlagAgreeButton.UseVisualStyleBackColor = true;
+            this.FlagAgreeButton.Click += new System.EventHandler(this.FlagAgreeButton_Click);
             // 
             // FlagNumericUpDown
             // 
@@ -878,8 +889,8 @@
             // 
             // sePage
             // 
+            this.sePage.Controls.Add(this.SeComboBox);
             this.sePage.Controls.Add(this.SeAgreeButton);
-            this.sePage.Controls.Add(this.SeTextBox);
             this.sePage.Location = new System.Drawing.Point(4, 40);
             this.sePage.Name = "sePage";
             this.sePage.Size = new System.Drawing.Size(485, 566);
@@ -896,18 +907,12 @@
             this.SeAgreeButton.TabIndex = 3;
             this.SeAgreeButton.Text = "登録";
             this.SeAgreeButton.UseVisualStyleBackColor = true;
-            // 
-            // SeTextBox
-            // 
-            this.SeTextBox.Location = new System.Drawing.Point(7, 17);
-            this.SeTextBox.Name = "SeTextBox";
-            this.SeTextBox.Size = new System.Drawing.Size(472, 19);
-            this.SeTextBox.TabIndex = 2;
+            this.SeAgreeButton.Click += new System.EventHandler(this.SeAgreeButton_Click);
             // 
             // eventPage
             // 
+            this.eventPage.Controls.Add(this.EventComboBox);
             this.eventPage.Controls.Add(this.EventAgreeButton);
-            this.eventPage.Controls.Add(this.EventTextBox);
             this.eventPage.Location = new System.Drawing.Point(4, 40);
             this.eventPage.Name = "eventPage";
             this.eventPage.Size = new System.Drawing.Size(485, 566);
@@ -924,16 +929,11 @@
             this.EventAgreeButton.TabIndex = 3;
             this.EventAgreeButton.Text = "登録";
             this.EventAgreeButton.UseVisualStyleBackColor = true;
-            // 
-            // EventTextBox
-            // 
-            this.EventTextBox.Location = new System.Drawing.Point(7, 17);
-            this.EventTextBox.Name = "EventTextBox";
-            this.EventTextBox.Size = new System.Drawing.Size(472, 19);
-            this.EventTextBox.TabIndex = 2;
+            this.EventAgreeButton.Click += new System.EventHandler(this.EventAgreeButton_Click);
             // 
             // loadPage
             // 
+            this.loadPage.Controls.Add(this.ScriptLoadFileSelectButton);
             this.loadPage.Controls.Add(this.ScriptLoadAgreeButton);
             this.loadPage.Controls.Add(this.ScriptLoadTextBox);
             this.loadPage.Location = new System.Drawing.Point(4, 40);
@@ -952,12 +952,13 @@
             this.ScriptLoadAgreeButton.TabIndex = 3;
             this.ScriptLoadAgreeButton.Text = "登録";
             this.ScriptLoadAgreeButton.UseVisualStyleBackColor = true;
+            this.ScriptLoadAgreeButton.Click += new System.EventHandler(this.ScriptLoadAgreeButton_Click);
             // 
             // ScriptLoadTextBox
             // 
-            this.ScriptLoadTextBox.Location = new System.Drawing.Point(7, 17);
+            this.ScriptLoadTextBox.Location = new System.Drawing.Point(8, 17);
             this.ScriptLoadTextBox.Name = "ScriptLoadTextBox";
-            this.ScriptLoadTextBox.Size = new System.Drawing.Size(472, 19);
+            this.ScriptLoadTextBox.Size = new System.Drawing.Size(432, 19);
             this.ScriptLoadTextBox.TabIndex = 2;
             // 
             // groupBox1
@@ -1009,14 +1010,49 @@
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
             // 
-            // JumpComboBox
+            // WaitTimeNumericUpDown
             // 
-            this.JumpComboBox.FormattingEnabled = true;
-            this.JumpComboBox.Location = new System.Drawing.Point(7, 17);
-            this.JumpComboBox.Name = "JumpComboBox";
-            this.JumpComboBox.Size = new System.Drawing.Size(472, 20);
-            this.JumpComboBox.TabIndex = 6;
-            this.JumpComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.WaitTimeNumericUpDown.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.WaitTimeNumericUpDown.Location = new System.Drawing.Point(7, 17);
+            this.WaitTimeNumericUpDown.Name = "WaitTimeNumericUpDown";
+            this.WaitTimeNumericUpDown.Size = new System.Drawing.Size(472, 19);
+            this.WaitTimeNumericUpDown.TabIndex = 4;
+            // 
+            // ScriptLoadFileSelectButton
+            // 
+            this.ScriptLoadFileSelectButton.Location = new System.Drawing.Point(446, 13);
+            this.ScriptLoadFileSelectButton.Name = "ScriptLoadFileSelectButton";
+            this.ScriptLoadFileSelectButton.Size = new System.Drawing.Size(23, 23);
+            this.ScriptLoadFileSelectButton.TabIndex = 4;
+            this.ScriptLoadFileSelectButton.Text = "...";
+            this.ScriptLoadFileSelectButton.UseVisualStyleBackColor = true;
+            this.ScriptLoadFileSelectButton.Click += new System.EventHandler(this.ScriptLoadFileSelectButton_Click);
+            // 
+            // ScriptLoadOpenFileDialog
+            // 
+            this.ScriptLoadOpenFileDialog.FileName = "ScriptLoadOpenFileDialog";
+            // 
+            // EventComboBox
+            // 
+            this.EventComboBox.FormattingEnabled = true;
+            this.EventComboBox.Location = new System.Drawing.Point(7, 17);
+            this.EventComboBox.Name = "EventComboBox";
+            this.EventComboBox.Size = new System.Drawing.Size(472, 20);
+            this.EventComboBox.TabIndex = 4;
+            this.EventComboBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ComboBox_KeyDown);
+            // 
+            // SeComboBox
+            // 
+            this.SeComboBox.FormattingEnabled = true;
+            this.SeComboBox.Location = new System.Drawing.Point(7, 17);
+            this.SeComboBox.Name = "SeComboBox";
+            this.SeComboBox.Size = new System.Drawing.Size(472, 20);
+            this.SeComboBox.TabIndex = 4;
+            this.SeComboBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ComboBox_KeyDown);
             // 
             // Form1
             // 
@@ -1047,7 +1083,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.IfFlagNumericUpDown)).EndInit();
             this.keywaitPage.ResumeLayout(false);
             this.waiotPage.ResumeLayout(false);
-            this.waiotPage.PerformLayout();
             this.endPage.ResumeLayout(false);
             this.bgPage.ResumeLayout(false);
             this.bgPage.PerformLayout();
@@ -1060,13 +1095,12 @@
             this.bgmPage.ResumeLayout(false);
             this.bgmPage.PerformLayout();
             this.sePage.ResumeLayout(false);
-            this.sePage.PerformLayout();
             this.eventPage.ResumeLayout(false);
-            this.eventPage.PerformLayout();
             this.loadPage.ResumeLayout(false);
             this.loadPage.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WaitTimeNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1111,14 +1145,11 @@
         private System.Windows.Forms.TextBox SelectTextBox;
         private System.Windows.Forms.Button KeyWaitAgreeButton;
         private System.Windows.Forms.Button TimeWaitAgreeButton;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button EndAgreeButton;
         private System.Windows.Forms.Button BgmAgreeButton;
         private System.Windows.Forms.TextBox BgmTextBox;
         private System.Windows.Forms.Button SeAgreeButton;
-        private System.Windows.Forms.TextBox SeTextBox;
         private System.Windows.Forms.Button EventAgreeButton;
-        private System.Windows.Forms.TextBox EventTextBox;
         private System.Windows.Forms.Button ScriptLoadAgreeButton;
         private System.Windows.Forms.TextBox ScriptLoadTextBox;
         private System.Windows.Forms.ComboBox BgNameComboBox;
@@ -1163,6 +1194,11 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.ComboBox JumpComboBox;
+        private System.Windows.Forms.NumericUpDown WaitTimeNumericUpDown;
+        private System.Windows.Forms.Button ScriptLoadFileSelectButton;
+        private System.Windows.Forms.OpenFileDialog ScriptLoadOpenFileDialog;
+        private System.Windows.Forms.ComboBox EventComboBox;
+        private System.Windows.Forms.ComboBox SeComboBox;
     }
 }
 

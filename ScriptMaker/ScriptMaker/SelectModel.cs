@@ -13,7 +13,7 @@ namespace ScriptMaker
             // 選択肢に表示されるメッセージ
             public string message = "";
             // 選択された場合の飛び先
-            public Jump label = null;
+            public string jump = "";
         }
         // 選択リスト
         public List<SelectMessage> select_message = new List<SelectMessage>();
