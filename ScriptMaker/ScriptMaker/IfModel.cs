@@ -14,6 +14,8 @@ namespace ScriptMaker
             public string name = "";
             // 比較対象
             public CommonParam.FlagCompareType flag_type = CommonParam.FlagCompareType.Equal;
+            // 比較するフラグの数
+            public int flagNum = 0;
         }
         // 比較する総フラグ数
         public int flag_count;

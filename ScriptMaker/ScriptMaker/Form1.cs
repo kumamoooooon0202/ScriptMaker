@@ -22,6 +22,7 @@ namespace ScriptMaker
         }
         private int _selectLineCount = 0;
         private List<SelectObjPack> _selectComboBox = new List<SelectObjPack>();
+        private int ifFlagGroupCount = 1;
 
         #endregion
 
@@ -49,11 +50,25 @@ namespace ScriptMaker
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // 最初に実行されるので必要な処理はここで行う
-            //foreach (var i in Enumerable.Range(0, 256))
-            //{
-            //    FlagComboBox.Items.Add("flag" + i.ToString("000"));
-            //}
+            string[] compareList = new string[] { "==", ">=", "<=", "!=", ">", "<" };
+            string[] compareList2 = new string[] { "$$", "||" };
+            List<ComboBox> ifSelectComboList = new List<ComboBox>()
+            {
+                IfSelectTypeComboBox1,
+                IfSelectTypeComboBox2,
+                IfSelectTypeComboBox3,
+                IfSelectTypeComboBox4,
+                IfSelectTypeComboBox5
+            };
+            List<ComboBox> ifGroupComboList = new List<ComboBox>()
+            {
+                IfFlagGroupComboBox1,
+                IfFlagGroupComboBox2,
+                IfFlagGroupComboBox3,
+                IfFlagGroupComboBox4,
+            };
+            ifSelectComboList.ForEach(x => x.Items.AddRange(compareList));
+            ifGroupComboList.ForEach(x => x.Items.AddRange(compareList2));
         }
 
         private void ScriptListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -123,6 +138,10 @@ namespace ScriptMaker
 
             // コンボボックスにラベルを登録する
             JumpComboBox.Items.Add(LabelTextBox.Text);
+
+            // if の分岐に使用する
+            IfFlagJumpComboBox.Items.Add(LabelTextBox.Text);
+
             // 選択のコンボボックスに追加
             _selectComboBox.ForEach(s => s.comboBox.Items.Add(LabelTextBox.Text));
             SetCommandScript("label", LabelTextBox.Text);
@@ -313,7 +332,15 @@ namespace ScriptMaker
         /// <param name="e"></param>
         private void FlagAgreeButton_Click(object sender, EventArgs e)
         {
+            // テキストにフラグ名が設定されていない場合は何もしない
+            if (string.IsNullOrWhiteSpace(FlagComboBox.Text)) return;
             var flagModel = new FlagModel();
+            // テキストのデータが未登録ならばリストに登録する
+            if (FlagComboBox.Items.Contains(FlagComboBox.Text) == false)
+            {
+                FlagComboBox.Items.Add(FlagComboBox.Text);
+                AddIfFlagComboBox(FlagComboBox.Text);
+            }
             AgreeFunctionWithComboBox("Flag", FlagComboBox, () =>
             {
                 flagModel.name = FlagComboBox.Items[FlagComboBox.SelectedIndex].ToString();
@@ -378,17 +405,134 @@ namespace ScriptMaker
             {
                 if (!cbox.Items.Contains(SeComboBox.Text))
                     cbox.Items.Add(SeComboBox.Text);
+                if (cbox.Name.Equals("FlagComboBox"))
+                {
+                    AddIfFlagComboBox(cbox.Text);
+                }
             }
+        }
+
+        private void AddIfFlagComboBox(string text)
+        {
+            List<ComboBox> ifFlagNameComboList = new List<ComboBox>()
+            {
+                IfFlagNameComboBox1,
+                IfFlagNameComboBox2,
+                IfFlagNameComboBox3,
+                IfFlagNameComboBox4,
+                IfFlagNameComboBox5,
+            };
+            ifFlagNameComboList.ForEach(x => x.Items.Add(text));
         }
 
         private void SeAgreeButton_Click(object sender, EventArgs e)
         {
             var seModel = new SEModel();
+            // 何も記載されていなければ処理しない
+            if (string.IsNullOrWhiteSpace(SeComboBox.Text)) return;
             AgreeFunctionWithComboBox("se", SeComboBox, () =>
             {
-                seModel.name = SeComboBox.Items[SeComboBox.SelectedIndex].ToString();
+                seModel.name = SeComboBox.Text;
+                if (!SeComboBox.Items.Contains(SeComboBox.Text))
+                    SeComboBox.Items.Add(SeComboBox.Text);
                 return JsonConvert.SerializeObject(seModel);
             });
+        }
+
+        private void SEButton_Click(object sender, EventArgs e)
+        {
+            if (SEBgmFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                var fileName = Path.GetFileNameWithoutExtension(SEBgmFileDialog.FileName);
+                SeComboBox.Items.Add(fileName);
+                SeComboBox.Text = fileName;
+            }
+        }
+
+        private void BgmAgreeButton_Click(object sender, EventArgs e)
+        {
+            var bgmModel = new BGMModel();
+            // 何も記載されていなければ処理しない
+            if (string.IsNullOrWhiteSpace(BGMComboBox.Text)) return;
+            AgreeFunctionWithComboBox("bgm", BGMComboBox, () =>
+            {
+                bgmModel.name = BGMComboBox.Text;
+                if (!BGMComboBox.Items.Contains(BGMComboBox.Text))
+                    BGMComboBox.Items.Add(BGMComboBox.Text);
+                return JsonConvert.SerializeObject(bgmModel);
+            });
+        }
+
+        private void BGMButton_Click(object sender, EventArgs e)
+        {
+            if (SEBgmFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                var fileName = Path.GetFileNameWithoutExtension(SEBgmFileDialog.FileName);
+                BGMComboBox.Items.Add(fileName);
+                // もしも同じファイル名が登録されていたら再登録しない
+                if (BGMComboBox.Items.Contains(fileName)) return;
+                BGMComboBox.Text = fileName;
+            }
+        }
+
+        private void IfAddButton_Click(object sender, EventArgs e)
+        {
+            ifFlagGroupCount++;
+            IfFlagGroupDisp();
+            IfSabButton.Enabled = true;
+            IfAddButton.Enabled = ifFlagGroupCount < 5;
+        }
+
+        private void IfSabButton_Click(object sender, EventArgs e)
+        {
+            ifFlagGroupCount--;
+            IfFlagGroupDisp();
+            IfAddButton.Enabled = ifFlagGroupCount > 1;
+            IfAddButton.Enabled = true;
+        }
+
+        private void IfFlagGroupDisp()
+        {
+            List<GroupBox> ifFlagGroups = new List<GroupBox>()
+            {
+                IfFlagGroupBox1,
+                IfFlagGroupBox2,
+                IfFlagGroupBox3,
+                IfFlagGroupBox4,
+                IfFlagGroupBox5,
+            };
+            foreach(var i in Enumerable.Range(1, 5))
+            {
+                ifFlagGroups[i - 1].Visible = (i <= ifFlagGroupCount);
+            }
+        }
+
+        private void IfAgreeButton_Click(object sender, EventArgs e)
+        {
+            List<ComboBox> ifSelectComboList = new List<ComboBox>()
+            {
+                IfSelectTypeComboBox1,
+                IfSelectTypeComboBox2,
+                IfSelectTypeComboBox3,
+                IfSelectTypeComboBox4,
+                IfSelectTypeComboBox5
+            };
+            List<ComboBox> ifGroupComboList = new List<ComboBox>()
+            {
+                IfFlagGroupComboBox1,
+                IfFlagGroupComboBox2,
+                IfFlagGroupComboBox3,
+                IfFlagGroupComboBox4,
+            };
+
+            var ifModel = new IfModel();
+            foreach(var i in Enumerable.Range(0, ifFlagGroupCount))
+            {
+                var cheekFlag = new IfModel.CheckFlag();
+                cheekFlag.name = ifSelectComboList[i].Text;
+                cheekFlag.flag_type = CommonParam.
+            }
+            ifModel.flags.AddRange();
         }
     }
 }

@@ -50,7 +50,18 @@ namespace ScriptMaker
             SoundLoopTypeMax
         }
 
-
+        public Dictionary<string, FlagCompareType> FlagComgParams =
+            new Dictionary<string, FlagCompareType>()
+            {
+                {"==", FlagCompareType.Equal        },
+                {"!=", FlagCompareType.NotEqual     },
+                { ">", FlagCompareType.Greater      },
+                {">=", FlagCompareType.GreaterThan  },
+                { "<", FlagCompareType.Less         },
+                {"<=", FlagCompareType.LessThan     },
+                {"$$", FlagCompareType.And          },
+                {"||", FlagCompareType.Or           },
+            };
     }
 
 }
