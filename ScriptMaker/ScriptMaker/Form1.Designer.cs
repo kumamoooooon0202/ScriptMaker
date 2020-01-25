@@ -50,10 +50,32 @@
             this.SelectAgreeButton = new System.Windows.Forms.Button();
             this.SelectTextBox = new System.Windows.Forms.TextBox();
             this.ifPage = new System.Windows.Forms.TabPage();
-            this.IfAgreeButton = new System.Windows.Forms.Button();
-            this.IfFlagNumericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.IfSelectTypeComboBox1 = new System.Windows.Forms.ComboBox();
+            this.IfFlagJumpComboBox = new System.Windows.Forms.ComboBox();
+            this.IfFlagGroupBox5 = new System.Windows.Forms.GroupBox();
+            this.IfFlagGroupComboBox4 = new System.Windows.Forms.ComboBox();
+            this.IfFlagNameComboBox5 = new System.Windows.Forms.ComboBox();
+            this.IfSelectTypeComboBox5 = new System.Windows.Forms.ComboBox();
+            this.IfFlagNumericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.IfFlagGroupBox4 = new System.Windows.Forms.GroupBox();
+            this.IfFlagGroupComboBox3 = new System.Windows.Forms.ComboBox();
+            this.IfFlagNameComboBox4 = new System.Windows.Forms.ComboBox();
+            this.IfSelectTypeComboBox4 = new System.Windows.Forms.ComboBox();
+            this.IfFlagNumericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.IfFlagGroupBox3 = new System.Windows.Forms.GroupBox();
+            this.IfFlagGroupComboBox2 = new System.Windows.Forms.ComboBox();
+            this.IfFlagNameComboBox3 = new System.Windows.Forms.ComboBox();
+            this.IfSelectTypeComboBox3 = new System.Windows.Forms.ComboBox();
+            this.IfFlagNumericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.IfFlagGroupBox2 = new System.Windows.Forms.GroupBox();
+            this.IfFlagGroupComboBox1 = new System.Windows.Forms.ComboBox();
+            this.IfFlagNameComboBox2 = new System.Windows.Forms.ComboBox();
+            this.IfSelectTypeComboBox2 = new System.Windows.Forms.ComboBox();
+            this.IfFlagNumericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.IfFlagGroupBox1 = new System.Windows.Forms.GroupBox();
             this.IfFlagNameComboBox1 = new System.Windows.Forms.ComboBox();
+            this.IfSelectTypeComboBox1 = new System.Windows.Forms.ComboBox();
+            this.IfFlagNumericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.IfAgreeButton = new System.Windows.Forms.Button();
             this.IfSabButton = new System.Windows.Forms.Button();
             this.IfAddButton = new System.Windows.Forms.Button();
             this.keywaitPage = new System.Windows.Forms.TabPage();
@@ -64,6 +86,9 @@
             this.endPage = new System.Windows.Forms.TabPage();
             this.EndAgreeButton = new System.Windows.Forms.Button();
             this.bgPage = new System.Windows.Forms.TabPage();
+            this.BgTimerNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.BgAlphaValueLabel = new System.Windows.Forms.Label();
+            this.BgNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.BgNameComboBox = new System.Windows.Forms.ComboBox();
             this.BgColorChangeButton = new System.Windows.Forms.Button();
             this.BgColorTextBox = new System.Windows.Forms.TextBox();
@@ -71,10 +96,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.BgColorLabel = new System.Windows.Forms.Label();
             this.BgEffectTimeLabel = new System.Windows.Forms.Label();
-            this.BgEffectTimeTextBox = new System.Windows.Forms.TextBox();
             this.BgListBox = new System.Windows.Forms.ListBox();
             this.BgEffectComboBox = new System.Windows.Forms.ComboBox();
             this.charactorPage = new System.Windows.Forms.TabPage();
+            this.CharacterTimerNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.CharacterAlphaNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.CharacterNameComboBox = new System.Windows.Forms.ComboBox();
             this.CharacterColorChangeButton = new System.Windows.Forms.Button();
             this.CharacterColorTextBox = new System.Windows.Forms.TextBox();
@@ -82,10 +109,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.CharacterColorLabel = new System.Windows.Forms.Label();
             this.CharacterEffectTimeLabel = new System.Windows.Forms.Label();
-            this.CharacterEffectTimeTextBox = new System.Windows.Forms.TextBox();
             this.CharacterListBox = new System.Windows.Forms.ListBox();
             this.CharacterEffectComboBox = new System.Windows.Forms.ComboBox();
             this.itenPage = new System.Windows.Forms.TabPage();
+            this.ItemTimerNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.ItemAlphaNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.ItemNameComboBox = new System.Windows.Forms.ComboBox();
             this.ItemColorChangeButton = new System.Windows.Forms.Button();
             this.ItemColorTextBox = new System.Windows.Forms.TextBox();
@@ -93,7 +122,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.ItemColorLabel = new System.Windows.Forms.Label();
             this.ItemEffectTimeLabel = new System.Windows.Forms.Label();
-            this.ItemEffectTimeTextBox = new System.Windows.Forms.TextBox();
             this.ItemListBox = new System.Windows.Forms.ListBox();
             this.ItemEffectComboBox = new System.Windows.Forms.ComboBox();
             this.flagPage = new System.Windows.Forms.TabPage();
@@ -101,8 +129,11 @@
             this.FlagAgreeButton = new System.Windows.Forms.Button();
             this.FlagNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.bgmPage = new System.Windows.Forms.TabPage();
+            this.BGMButton = new System.Windows.Forms.Button();
+            this.BGMComboBox = new System.Windows.Forms.ComboBox();
             this.BgmAgreeButton = new System.Windows.Forms.Button();
             this.sePage = new System.Windows.Forms.TabPage();
+            this.SEButton = new System.Windows.Forms.Button();
             this.SeComboBox = new System.Windows.Forms.ComboBox();
             this.SeAgreeButton = new System.Windows.Forms.Button();
             this.eventPage = new System.Windows.Forms.TabPage();
@@ -119,32 +150,8 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ScriptLoadOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.SEButton = new System.Windows.Forms.Button();
             this.SEBgmFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.BGMComboBox = new System.Windows.Forms.ComboBox();
-            this.BGMButton = new System.Windows.Forms.Button();
-            this.IfFlagGroupBox1 = new System.Windows.Forms.GroupBox();
-            this.IfFlagGroupBox2 = new System.Windows.Forms.GroupBox();
-            this.IfFlagNameComboBox2 = new System.Windows.Forms.ComboBox();
-            this.IfSelectTypeComboBox2 = new System.Windows.Forms.ComboBox();
-            this.IfFlagNumericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.IfFlagGroupBox3 = new System.Windows.Forms.GroupBox();
-            this.IfFlagNameComboBox3 = new System.Windows.Forms.ComboBox();
-            this.IfSelectTypeComboBox3 = new System.Windows.Forms.ComboBox();
-            this.IfFlagNumericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.IfFlagGroupBox4 = new System.Windows.Forms.GroupBox();
-            this.IfFlagNameComboBox4 = new System.Windows.Forms.ComboBox();
-            this.IfSelectTypeComboBox4 = new System.Windows.Forms.ComboBox();
-            this.IfFlagNumericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.IfFlagGroupBox5 = new System.Windows.Forms.GroupBox();
-            this.IfFlagNameComboBox5 = new System.Windows.Forms.ComboBox();
-            this.IfSelectTypeComboBox5 = new System.Windows.Forms.ComboBox();
-            this.IfFlagNumericUpDown5 = new System.Windows.Forms.NumericUpDown();
-            this.IfFlagGroupComboBox1 = new System.Windows.Forms.ComboBox();
-            this.IfFlagGroupComboBox2 = new System.Windows.Forms.ComboBox();
-            this.IfFlagGroupComboBox3 = new System.Windows.Forms.ComboBox();
-            this.IfFlagGroupComboBox4 = new System.Windows.Forms.ComboBox();
-            this.IfFlagJumpComboBox = new System.Windows.Forms.ComboBox();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.menuStrip1.SuspendLayout();
             this.ScriptTabControl.SuspendLayout();
             this.messagePage.SuspendLayout();
@@ -153,14 +160,29 @@
             this.jumpPage.SuspendLayout();
             this.selectPage.SuspendLayout();
             this.ifPage.SuspendLayout();
+            this.IfFlagGroupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IfFlagNumericUpDown5)).BeginInit();
+            this.IfFlagGroupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IfFlagNumericUpDown4)).BeginInit();
+            this.IfFlagGroupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IfFlagNumericUpDown3)).BeginInit();
+            this.IfFlagGroupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IfFlagNumericUpDown2)).BeginInit();
+            this.IfFlagGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IfFlagNumericUpDown1)).BeginInit();
             this.keywaitPage.SuspendLayout();
             this.waiotPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WaitTimeNumericUpDown)).BeginInit();
             this.endPage.SuspendLayout();
             this.bgPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BgTimerNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BgNumericUpDown)).BeginInit();
             this.charactorPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CharacterTimerNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CharacterAlphaNumericUpDown)).BeginInit();
             this.itenPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemTimerNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemAlphaNumericUpDown)).BeginInit();
             this.flagPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FlagNumericUpDown)).BeginInit();
             this.bgmPage.SuspendLayout();
@@ -168,15 +190,6 @@
             this.eventPage.SuspendLayout();
             this.loadPage.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.IfFlagGroupBox1.SuspendLayout();
-            this.IfFlagGroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.IfFlagNumericUpDown2)).BeginInit();
-            this.IfFlagGroupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.IfFlagNumericUpDown3)).BeginInit();
-            this.IfFlagGroupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.IfFlagNumericUpDown4)).BeginInit();
-            this.IfFlagGroupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.IfFlagNumericUpDown5)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -237,6 +250,7 @@
             this.ScriptTabControl.SelectedIndex = 0;
             this.ScriptTabControl.Size = new System.Drawing.Size(493, 610);
             this.ScriptTabControl.TabIndex = 2;
+            this.ScriptTabControl.Click += new System.EventHandler(this.BgColorChangeButton_Click);
             // 
             // messagePage
             // 
@@ -420,16 +434,251 @@
             this.ifPage.Text = "条件分岐";
             this.ifPage.UseVisualStyleBackColor = true;
             // 
-            // IfAgreeButton
+            // IfFlagJumpComboBox
             // 
-            this.IfAgreeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.IfAgreeButton.Location = new System.Drawing.Point(340, 540);
-            this.IfAgreeButton.Name = "IfAgreeButton";
-            this.IfAgreeButton.Size = new System.Drawing.Size(140, 24);
-            this.IfAgreeButton.TabIndex = 5;
-            this.IfAgreeButton.Text = "登録";
-            this.IfAgreeButton.UseVisualStyleBackColor = true;
-            this.IfAgreeButton.Click += new System.EventHandler(this.IfAgreeButton_Click);
+            this.IfFlagJumpComboBox.FormattingEnabled = true;
+            this.IfFlagJumpComboBox.Location = new System.Drawing.Point(12, 543);
+            this.IfFlagJumpComboBox.Name = "IfFlagJumpComboBox";
+            this.IfFlagJumpComboBox.Size = new System.Drawing.Size(318, 20);
+            this.IfFlagJumpComboBox.TabIndex = 8;
+            // 
+            // IfFlagGroupBox5
+            // 
+            this.IfFlagGroupBox5.Controls.Add(this.IfFlagGroupComboBox4);
+            this.IfFlagGroupBox5.Controls.Add(this.IfFlagNameComboBox5);
+            this.IfFlagGroupBox5.Controls.Add(this.IfSelectTypeComboBox5);
+            this.IfFlagGroupBox5.Controls.Add(this.IfFlagNumericUpDown5);
+            this.IfFlagGroupBox5.Location = new System.Drawing.Point(6, 440);
+            this.IfFlagGroupBox5.Name = "IfFlagGroupBox5";
+            this.IfFlagGroupBox5.Size = new System.Drawing.Size(476, 95);
+            this.IfFlagGroupBox5.TabIndex = 7;
+            this.IfFlagGroupBox5.TabStop = false;
+            this.IfFlagGroupBox5.Text = "フラグ5";
+            this.IfFlagGroupBox5.Visible = false;
+            // 
+            // IfFlagGroupComboBox4
+            // 
+            this.IfFlagGroupComboBox4.FormattingEnabled = true;
+            this.IfFlagGroupComboBox4.Location = new System.Drawing.Point(203, 17);
+            this.IfFlagGroupComboBox4.Name = "IfFlagGroupComboBox4";
+            this.IfFlagGroupComboBox4.Size = new System.Drawing.Size(121, 20);
+            this.IfFlagGroupComboBox4.TabIndex = 5;
+            // 
+            // IfFlagNameComboBox5
+            // 
+            this.IfFlagNameComboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.IfFlagNameComboBox5.FormattingEnabled = true;
+            this.IfFlagNameComboBox5.Location = new System.Drawing.Point(6, 43);
+            this.IfFlagNameComboBox5.Name = "IfFlagNameComboBox5";
+            this.IfFlagNameComboBox5.Size = new System.Drawing.Size(464, 20);
+            this.IfFlagNameComboBox5.TabIndex = 2;
+            // 
+            // IfSelectTypeComboBox5
+            // 
+            this.IfSelectTypeComboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.IfSelectTypeComboBox5.FormattingEnabled = true;
+            this.IfSelectTypeComboBox5.Location = new System.Drawing.Point(6, 69);
+            this.IfSelectTypeComboBox5.Name = "IfSelectTypeComboBox5";
+            this.IfSelectTypeComboBox5.Size = new System.Drawing.Size(318, 20);
+            this.IfSelectTypeComboBox5.TabIndex = 3;
+            // 
+            // IfFlagNumericUpDown5
+            // 
+            this.IfFlagNumericUpDown5.Location = new System.Drawing.Point(328, 69);
+            this.IfFlagNumericUpDown5.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.IfFlagNumericUpDown5.Name = "IfFlagNumericUpDown5";
+            this.IfFlagNumericUpDown5.Size = new System.Drawing.Size(142, 19);
+            this.IfFlagNumericUpDown5.TabIndex = 4;
+            // 
+            // IfFlagGroupBox4
+            // 
+            this.IfFlagGroupBox4.Controls.Add(this.IfFlagGroupComboBox3);
+            this.IfFlagGroupBox4.Controls.Add(this.IfFlagNameComboBox4);
+            this.IfFlagGroupBox4.Controls.Add(this.IfSelectTypeComboBox4);
+            this.IfFlagGroupBox4.Controls.Add(this.IfFlagNumericUpDown4);
+            this.IfFlagGroupBox4.Location = new System.Drawing.Point(6, 339);
+            this.IfFlagGroupBox4.Name = "IfFlagGroupBox4";
+            this.IfFlagGroupBox4.Size = new System.Drawing.Size(476, 95);
+            this.IfFlagGroupBox4.TabIndex = 7;
+            this.IfFlagGroupBox4.TabStop = false;
+            this.IfFlagGroupBox4.Text = "フラグ4";
+            this.IfFlagGroupBox4.Visible = false;
+            // 
+            // IfFlagGroupComboBox3
+            // 
+            this.IfFlagGroupComboBox3.FormattingEnabled = true;
+            this.IfFlagGroupComboBox3.Location = new System.Drawing.Point(203, 17);
+            this.IfFlagGroupComboBox3.Name = "IfFlagGroupComboBox3";
+            this.IfFlagGroupComboBox3.Size = new System.Drawing.Size(121, 20);
+            this.IfFlagGroupComboBox3.TabIndex = 5;
+            // 
+            // IfFlagNameComboBox4
+            // 
+            this.IfFlagNameComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.IfFlagNameComboBox4.FormattingEnabled = true;
+            this.IfFlagNameComboBox4.Location = new System.Drawing.Point(6, 43);
+            this.IfFlagNameComboBox4.Name = "IfFlagNameComboBox4";
+            this.IfFlagNameComboBox4.Size = new System.Drawing.Size(464, 20);
+            this.IfFlagNameComboBox4.TabIndex = 2;
+            // 
+            // IfSelectTypeComboBox4
+            // 
+            this.IfSelectTypeComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.IfSelectTypeComboBox4.FormattingEnabled = true;
+            this.IfSelectTypeComboBox4.Location = new System.Drawing.Point(6, 69);
+            this.IfSelectTypeComboBox4.Name = "IfSelectTypeComboBox4";
+            this.IfSelectTypeComboBox4.Size = new System.Drawing.Size(318, 20);
+            this.IfSelectTypeComboBox4.TabIndex = 3;
+            // 
+            // IfFlagNumericUpDown4
+            // 
+            this.IfFlagNumericUpDown4.Location = new System.Drawing.Point(328, 69);
+            this.IfFlagNumericUpDown4.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.IfFlagNumericUpDown4.Name = "IfFlagNumericUpDown4";
+            this.IfFlagNumericUpDown4.Size = new System.Drawing.Size(142, 19);
+            this.IfFlagNumericUpDown4.TabIndex = 4;
+            // 
+            // IfFlagGroupBox3
+            // 
+            this.IfFlagGroupBox3.Controls.Add(this.IfFlagGroupComboBox2);
+            this.IfFlagGroupBox3.Controls.Add(this.IfFlagNameComboBox3);
+            this.IfFlagGroupBox3.Controls.Add(this.IfSelectTypeComboBox3);
+            this.IfFlagGroupBox3.Controls.Add(this.IfFlagNumericUpDown3);
+            this.IfFlagGroupBox3.Location = new System.Drawing.Point(6, 238);
+            this.IfFlagGroupBox3.Name = "IfFlagGroupBox3";
+            this.IfFlagGroupBox3.Size = new System.Drawing.Size(476, 95);
+            this.IfFlagGroupBox3.TabIndex = 7;
+            this.IfFlagGroupBox3.TabStop = false;
+            this.IfFlagGroupBox3.Text = "フラグ3";
+            this.IfFlagGroupBox3.Visible = false;
+            // 
+            // IfFlagGroupComboBox2
+            // 
+            this.IfFlagGroupComboBox2.FormattingEnabled = true;
+            this.IfFlagGroupComboBox2.Location = new System.Drawing.Point(203, 16);
+            this.IfFlagGroupComboBox2.Name = "IfFlagGroupComboBox2";
+            this.IfFlagGroupComboBox2.Size = new System.Drawing.Size(121, 20);
+            this.IfFlagGroupComboBox2.TabIndex = 5;
+            // 
+            // IfFlagNameComboBox3
+            // 
+            this.IfFlagNameComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.IfFlagNameComboBox3.FormattingEnabled = true;
+            this.IfFlagNameComboBox3.Location = new System.Drawing.Point(6, 42);
+            this.IfFlagNameComboBox3.Name = "IfFlagNameComboBox3";
+            this.IfFlagNameComboBox3.Size = new System.Drawing.Size(464, 20);
+            this.IfFlagNameComboBox3.TabIndex = 2;
+            // 
+            // IfSelectTypeComboBox3
+            // 
+            this.IfSelectTypeComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.IfSelectTypeComboBox3.FormattingEnabled = true;
+            this.IfSelectTypeComboBox3.Location = new System.Drawing.Point(6, 68);
+            this.IfSelectTypeComboBox3.Name = "IfSelectTypeComboBox3";
+            this.IfSelectTypeComboBox3.Size = new System.Drawing.Size(318, 20);
+            this.IfSelectTypeComboBox3.TabIndex = 3;
+            // 
+            // IfFlagNumericUpDown3
+            // 
+            this.IfFlagNumericUpDown3.Location = new System.Drawing.Point(328, 68);
+            this.IfFlagNumericUpDown3.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.IfFlagNumericUpDown3.Name = "IfFlagNumericUpDown3";
+            this.IfFlagNumericUpDown3.Size = new System.Drawing.Size(142, 19);
+            this.IfFlagNumericUpDown3.TabIndex = 4;
+            // 
+            // IfFlagGroupBox2
+            // 
+            this.IfFlagGroupBox2.Controls.Add(this.IfFlagGroupComboBox1);
+            this.IfFlagGroupBox2.Controls.Add(this.IfFlagNameComboBox2);
+            this.IfFlagGroupBox2.Controls.Add(this.IfSelectTypeComboBox2);
+            this.IfFlagGroupBox2.Controls.Add(this.IfFlagNumericUpDown2);
+            this.IfFlagGroupBox2.Location = new System.Drawing.Point(6, 137);
+            this.IfFlagGroupBox2.Name = "IfFlagGroupBox2";
+            this.IfFlagGroupBox2.Size = new System.Drawing.Size(476, 95);
+            this.IfFlagGroupBox2.TabIndex = 7;
+            this.IfFlagGroupBox2.TabStop = false;
+            this.IfFlagGroupBox2.Text = "フラグ2";
+            this.IfFlagGroupBox2.Visible = false;
+            // 
+            // IfFlagGroupComboBox1
+            // 
+            this.IfFlagGroupComboBox1.FormattingEnabled = true;
+            this.IfFlagGroupComboBox1.Location = new System.Drawing.Point(203, 16);
+            this.IfFlagGroupComboBox1.Name = "IfFlagGroupComboBox1";
+            this.IfFlagGroupComboBox1.Size = new System.Drawing.Size(121, 20);
+            this.IfFlagGroupComboBox1.TabIndex = 5;
+            // 
+            // IfFlagNameComboBox2
+            // 
+            this.IfFlagNameComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.IfFlagNameComboBox2.FormattingEnabled = true;
+            this.IfFlagNameComboBox2.Location = new System.Drawing.Point(6, 42);
+            this.IfFlagNameComboBox2.Name = "IfFlagNameComboBox2";
+            this.IfFlagNameComboBox2.Size = new System.Drawing.Size(464, 20);
+            this.IfFlagNameComboBox2.TabIndex = 2;
+            // 
+            // IfSelectTypeComboBox2
+            // 
+            this.IfSelectTypeComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.IfSelectTypeComboBox2.FormattingEnabled = true;
+            this.IfSelectTypeComboBox2.Location = new System.Drawing.Point(6, 68);
+            this.IfSelectTypeComboBox2.Name = "IfSelectTypeComboBox2";
+            this.IfSelectTypeComboBox2.Size = new System.Drawing.Size(318, 20);
+            this.IfSelectTypeComboBox2.TabIndex = 3;
+            // 
+            // IfFlagNumericUpDown2
+            // 
+            this.IfFlagNumericUpDown2.Location = new System.Drawing.Point(328, 68);
+            this.IfFlagNumericUpDown2.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.IfFlagNumericUpDown2.Name = "IfFlagNumericUpDown2";
+            this.IfFlagNumericUpDown2.Size = new System.Drawing.Size(142, 19);
+            this.IfFlagNumericUpDown2.TabIndex = 4;
+            // 
+            // IfFlagGroupBox1
+            // 
+            this.IfFlagGroupBox1.Controls.Add(this.IfFlagNameComboBox1);
+            this.IfFlagGroupBox1.Controls.Add(this.IfSelectTypeComboBox1);
+            this.IfFlagGroupBox1.Controls.Add(this.IfFlagNumericUpDown1);
+            this.IfFlagGroupBox1.Location = new System.Drawing.Point(6, 57);
+            this.IfFlagGroupBox1.Name = "IfFlagGroupBox1";
+            this.IfFlagGroupBox1.Size = new System.Drawing.Size(476, 74);
+            this.IfFlagGroupBox1.TabIndex = 6;
+            this.IfFlagGroupBox1.TabStop = false;
+            this.IfFlagGroupBox1.Text = "フラグ1";
+            // 
+            // IfFlagNameComboBox1
+            // 
+            this.IfFlagNameComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.IfFlagNameComboBox1.FormattingEnabled = true;
+            this.IfFlagNameComboBox1.Location = new System.Drawing.Point(6, 18);
+            this.IfFlagNameComboBox1.Name = "IfFlagNameComboBox1";
+            this.IfFlagNameComboBox1.Size = new System.Drawing.Size(464, 20);
+            this.IfFlagNameComboBox1.TabIndex = 2;
+            // 
+            // IfSelectTypeComboBox1
+            // 
+            this.IfSelectTypeComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.IfSelectTypeComboBox1.FormattingEnabled = true;
+            this.IfSelectTypeComboBox1.Location = new System.Drawing.Point(6, 44);
+            this.IfSelectTypeComboBox1.Name = "IfSelectTypeComboBox1";
+            this.IfSelectTypeComboBox1.Size = new System.Drawing.Size(318, 20);
+            this.IfSelectTypeComboBox1.TabIndex = 3;
             // 
             // IfFlagNumericUpDown1
             // 
@@ -443,23 +692,16 @@
             this.IfFlagNumericUpDown1.Size = new System.Drawing.Size(142, 19);
             this.IfFlagNumericUpDown1.TabIndex = 4;
             // 
-            // IfSelectTypeComboBox1
+            // IfAgreeButton
             // 
-            this.IfSelectTypeComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.IfSelectTypeComboBox1.FormattingEnabled = true;
-            this.IfSelectTypeComboBox1.Location = new System.Drawing.Point(6, 44);
-            this.IfSelectTypeComboBox1.Name = "IfSelectTypeComboBox1";
-            this.IfSelectTypeComboBox1.Size = new System.Drawing.Size(318, 20);
-            this.IfSelectTypeComboBox1.TabIndex = 3;
-            // 
-            // IfFlagNameComboBox1
-            // 
-            this.IfFlagNameComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.IfFlagNameComboBox1.FormattingEnabled = true;
-            this.IfFlagNameComboBox1.Location = new System.Drawing.Point(6, 18);
-            this.IfFlagNameComboBox1.Name = "IfFlagNameComboBox1";
-            this.IfFlagNameComboBox1.Size = new System.Drawing.Size(464, 20);
-            this.IfFlagNameComboBox1.TabIndex = 2;
+            this.IfAgreeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.IfAgreeButton.Location = new System.Drawing.Point(340, 540);
+            this.IfAgreeButton.Name = "IfAgreeButton";
+            this.IfAgreeButton.Size = new System.Drawing.Size(140, 24);
+            this.IfAgreeButton.TabIndex = 5;
+            this.IfAgreeButton.Text = "登録";
+            this.IfAgreeButton.UseVisualStyleBackColor = true;
+            this.IfAgreeButton.Click += new System.EventHandler(this.IfAgreeButton_Click);
             // 
             // IfSabButton
             // 
@@ -561,6 +803,9 @@
             // 
             // bgPage
             // 
+            this.bgPage.Controls.Add(this.BgTimerNumericUpDown);
+            this.bgPage.Controls.Add(this.BgAlphaValueLabel);
+            this.bgPage.Controls.Add(this.BgNumericUpDown);
             this.bgPage.Controls.Add(this.BgNameComboBox);
             this.bgPage.Controls.Add(this.BgColorChangeButton);
             this.bgPage.Controls.Add(this.BgColorTextBox);
@@ -568,7 +813,6 @@
             this.bgPage.Controls.Add(this.label4);
             this.bgPage.Controls.Add(this.BgColorLabel);
             this.bgPage.Controls.Add(this.BgEffectTimeLabel);
-            this.bgPage.Controls.Add(this.BgEffectTimeTextBox);
             this.bgPage.Controls.Add(this.BgListBox);
             this.bgPage.Controls.Add(this.BgEffectComboBox);
             this.bgPage.Location = new System.Drawing.Point(4, 40);
@@ -577,6 +821,29 @@
             this.bgPage.TabIndex = 9;
             this.bgPage.Text = "背景";
             this.bgPage.UseVisualStyleBackColor = true;
+            // 
+            // BgTimerNumericUpDown
+            // 
+            this.BgTimerNumericUpDown.Location = new System.Drawing.Point(135, 104);
+            this.BgTimerNumericUpDown.Name = "BgTimerNumericUpDown";
+            this.BgTimerNumericUpDown.Size = new System.Drawing.Size(100, 19);
+            this.BgTimerNumericUpDown.TabIndex = 24;
+            // 
+            // BgAlphaValueLabel
+            // 
+            this.BgAlphaValueLabel.AutoSize = true;
+            this.BgAlphaValueLabel.Location = new System.Drawing.Point(18, 175);
+            this.BgAlphaValueLabel.Name = "BgAlphaValueLabel";
+            this.BgAlphaValueLabel.Size = new System.Drawing.Size(75, 12);
+            this.BgAlphaValueLabel.TabIndex = 12;
+            this.BgAlphaValueLabel.Text = "目標アルファ値";
+            // 
+            // BgNumericUpDown
+            // 
+            this.BgNumericUpDown.Location = new System.Drawing.Point(135, 170);
+            this.BgNumericUpDown.Name = "BgNumericUpDown";
+            this.BgNumericUpDown.Size = new System.Drawing.Size(100, 19);
+            this.BgNumericUpDown.TabIndex = 11;
             // 
             // BgNameComboBox
             // 
@@ -588,16 +855,17 @@
             // 
             // BgColorChangeButton
             // 
-            this.BgColorChangeButton.Location = new System.Drawing.Point(195, 139);
+            this.BgColorChangeButton.Location = new System.Drawing.Point(241, 135);
             this.BgColorChangeButton.Name = "BgColorChangeButton";
             this.BgColorChangeButton.Size = new System.Drawing.Size(24, 23);
             this.BgColorChangeButton.TabIndex = 9;
             this.BgColorChangeButton.Text = "...";
             this.BgColorChangeButton.UseVisualStyleBackColor = true;
+            this.BgColorChangeButton.Click += new System.EventHandler(this.BgColorChangeButton_Click);
             // 
             // BgColorTextBox
             // 
-            this.BgColorTextBox.Location = new System.Drawing.Point(89, 141);
+            this.BgColorTextBox.Location = new System.Drawing.Point(135, 137);
             this.BgColorTextBox.Name = "BgColorTextBox";
             this.BgColorTextBox.Size = new System.Drawing.Size(100, 19);
             this.BgColorTextBox.TabIndex = 8;
@@ -611,6 +879,7 @@
             this.BgAgreeButton.TabIndex = 7;
             this.BgAgreeButton.Text = "登録";
             this.BgAgreeButton.UseVisualStyleBackColor = true;
+            this.BgAgreeButton.Click += new System.EventHandler(this.BgAgreeButton_Click);
             // 
             // label4
             // 
@@ -639,21 +908,17 @@
             this.BgEffectTimeLabel.TabIndex = 4;
             this.BgEffectTimeLabel.Text = "時間";
             // 
-            // BgEffectTimeTextBox
-            // 
-            this.BgEffectTimeTextBox.Location = new System.Drawing.Point(89, 108);
-            this.BgEffectTimeTextBox.Name = "BgEffectTimeTextBox";
-            this.BgEffectTimeTextBox.Size = new System.Drawing.Size(230, 19);
-            this.BgEffectTimeTextBox.TabIndex = 3;
-            // 
             // BgListBox
             // 
+            this.BgListBox.AllowDrop = true;
             this.BgListBox.FormattingEnabled = true;
             this.BgListBox.ItemHeight = 12;
             this.BgListBox.Location = new System.Drawing.Point(7, 229);
             this.BgListBox.Name = "BgListBox";
             this.BgListBox.Size = new System.Drawing.Size(245, 280);
             this.BgListBox.TabIndex = 2;
+            this.BgListBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.BgListBox_DragDrop);
+            this.BgListBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.BgListBox_DragEnter);
             // 
             // BgEffectComboBox
             // 
@@ -665,6 +930,9 @@
             // 
             // charactorPage
             // 
+            this.charactorPage.Controls.Add(this.CharacterTimerNumericUpDown);
+            this.charactorPage.Controls.Add(this.label3);
+            this.charactorPage.Controls.Add(this.CharacterAlphaNumericUpDown);
             this.charactorPage.Controls.Add(this.CharacterNameComboBox);
             this.charactorPage.Controls.Add(this.CharacterColorChangeButton);
             this.charactorPage.Controls.Add(this.CharacterColorTextBox);
@@ -672,7 +940,6 @@
             this.charactorPage.Controls.Add(this.label2);
             this.charactorPage.Controls.Add(this.CharacterColorLabel);
             this.charactorPage.Controls.Add(this.CharacterEffectTimeLabel);
-            this.charactorPage.Controls.Add(this.CharacterEffectTimeTextBox);
             this.charactorPage.Controls.Add(this.CharacterListBox);
             this.charactorPage.Controls.Add(this.CharacterEffectComboBox);
             this.charactorPage.Location = new System.Drawing.Point(4, 40);
@@ -681,6 +948,29 @@
             this.charactorPage.TabIndex = 10;
             this.charactorPage.Text = "キャラクター";
             this.charactorPage.UseVisualStyleBackColor = true;
+            // 
+            // CharacterTimerNumericUpDown
+            // 
+            this.CharacterTimerNumericUpDown.Location = new System.Drawing.Point(135, 104);
+            this.CharacterTimerNumericUpDown.Name = "CharacterTimerNumericUpDown";
+            this.CharacterTimerNumericUpDown.Size = new System.Drawing.Size(100, 19);
+            this.CharacterTimerNumericUpDown.TabIndex = 24;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(18, 175);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 12);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "目標アルファ値";
+            // 
+            // CharacterAlphaNumericUpDown
+            // 
+            this.CharacterAlphaNumericUpDown.Location = new System.Drawing.Point(135, 170);
+            this.CharacterAlphaNumericUpDown.Name = "CharacterAlphaNumericUpDown";
+            this.CharacterAlphaNumericUpDown.Size = new System.Drawing.Size(100, 19);
+            this.CharacterAlphaNumericUpDown.TabIndex = 21;
             // 
             // CharacterNameComboBox
             // 
@@ -692,16 +982,17 @@
             // 
             // CharacterColorChangeButton
             // 
-            this.CharacterColorChangeButton.Location = new System.Drawing.Point(195, 139);
+            this.CharacterColorChangeButton.Location = new System.Drawing.Point(241, 135);
             this.CharacterColorChangeButton.Name = "CharacterColorChangeButton";
             this.CharacterColorChangeButton.Size = new System.Drawing.Size(24, 23);
             this.CharacterColorChangeButton.TabIndex = 19;
             this.CharacterColorChangeButton.Text = "...";
             this.CharacterColorChangeButton.UseVisualStyleBackColor = true;
+            this.CharacterColorChangeButton.Click += new System.EventHandler(this.BgColorChangeButton_Click);
             // 
             // CharacterColorTextBox
             // 
-            this.CharacterColorTextBox.Location = new System.Drawing.Point(89, 141);
+            this.CharacterColorTextBox.Location = new System.Drawing.Point(135, 137);
             this.CharacterColorTextBox.Name = "CharacterColorTextBox";
             this.CharacterColorTextBox.Size = new System.Drawing.Size(100, 19);
             this.CharacterColorTextBox.TabIndex = 18;
@@ -743,21 +1034,17 @@
             this.CharacterEffectTimeLabel.TabIndex = 14;
             this.CharacterEffectTimeLabel.Text = "時間";
             // 
-            // CharacterEffectTimeTextBox
-            // 
-            this.CharacterEffectTimeTextBox.Location = new System.Drawing.Point(89, 108);
-            this.CharacterEffectTimeTextBox.Name = "CharacterEffectTimeTextBox";
-            this.CharacterEffectTimeTextBox.Size = new System.Drawing.Size(230, 19);
-            this.CharacterEffectTimeTextBox.TabIndex = 13;
-            // 
             // CharacterListBox
             // 
+            this.CharacterListBox.AllowDrop = true;
             this.CharacterListBox.FormattingEnabled = true;
             this.CharacterListBox.ItemHeight = 12;
             this.CharacterListBox.Location = new System.Drawing.Point(7, 229);
             this.CharacterListBox.Name = "CharacterListBox";
             this.CharacterListBox.Size = new System.Drawing.Size(245, 280);
             this.CharacterListBox.TabIndex = 12;
+            this.CharacterListBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.BgListBox_DragDrop);
+            this.CharacterListBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.BgListBox_DragEnter);
             // 
             // CharacterEffectComboBox
             // 
@@ -769,6 +1056,9 @@
             // 
             // itenPage
             // 
+            this.itenPage.Controls.Add(this.ItemTimerNumericUpDown);
+            this.itenPage.Controls.Add(this.label5);
+            this.itenPage.Controls.Add(this.ItemAlphaNumericUpDown);
             this.itenPage.Controls.Add(this.ItemNameComboBox);
             this.itenPage.Controls.Add(this.ItemColorChangeButton);
             this.itenPage.Controls.Add(this.ItemColorTextBox);
@@ -776,7 +1066,6 @@
             this.itenPage.Controls.Add(this.label6);
             this.itenPage.Controls.Add(this.ItemColorLabel);
             this.itenPage.Controls.Add(this.ItemEffectTimeLabel);
-            this.itenPage.Controls.Add(this.ItemEffectTimeTextBox);
             this.itenPage.Controls.Add(this.ItemListBox);
             this.itenPage.Controls.Add(this.ItemEffectComboBox);
             this.itenPage.Location = new System.Drawing.Point(4, 40);
@@ -785,6 +1074,29 @@
             this.itenPage.TabIndex = 11;
             this.itenPage.Text = "アイテム";
             this.itenPage.UseVisualStyleBackColor = true;
+            // 
+            // ItemTimerNumericUpDown
+            // 
+            this.ItemTimerNumericUpDown.Location = new System.Drawing.Point(135, 104);
+            this.ItemTimerNumericUpDown.Name = "ItemTimerNumericUpDown";
+            this.ItemTimerNumericUpDown.Size = new System.Drawing.Size(100, 19);
+            this.ItemTimerNumericUpDown.TabIndex = 23;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(18, 175);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(75, 12);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "目標アルファ値";
+            // 
+            // ItemAlphaNumericUpDown
+            // 
+            this.ItemAlphaNumericUpDown.Location = new System.Drawing.Point(135, 170);
+            this.ItemAlphaNumericUpDown.Name = "ItemAlphaNumericUpDown";
+            this.ItemAlphaNumericUpDown.Size = new System.Drawing.Size(100, 19);
+            this.ItemAlphaNumericUpDown.TabIndex = 21;
             // 
             // ItemNameComboBox
             // 
@@ -796,16 +1108,17 @@
             // 
             // ItemColorChangeButton
             // 
-            this.ItemColorChangeButton.Location = new System.Drawing.Point(195, 139);
+            this.ItemColorChangeButton.Location = new System.Drawing.Point(241, 135);
             this.ItemColorChangeButton.Name = "ItemColorChangeButton";
             this.ItemColorChangeButton.Size = new System.Drawing.Size(24, 23);
             this.ItemColorChangeButton.TabIndex = 19;
             this.ItemColorChangeButton.Text = "...";
             this.ItemColorChangeButton.UseVisualStyleBackColor = true;
+            this.ItemColorChangeButton.Click += new System.EventHandler(this.BgColorChangeButton_Click);
             // 
             // ItemColorTextBox
             // 
-            this.ItemColorTextBox.Location = new System.Drawing.Point(89, 144);
+            this.ItemColorTextBox.Location = new System.Drawing.Point(135, 137);
             this.ItemColorTextBox.Name = "ItemColorTextBox";
             this.ItemColorTextBox.Size = new System.Drawing.Size(100, 19);
             this.ItemColorTextBox.TabIndex = 18;
@@ -847,21 +1160,17 @@
             this.ItemEffectTimeLabel.TabIndex = 14;
             this.ItemEffectTimeLabel.Text = "時間";
             // 
-            // ItemEffectTimeTextBox
-            // 
-            this.ItemEffectTimeTextBox.Location = new System.Drawing.Point(89, 108);
-            this.ItemEffectTimeTextBox.Name = "ItemEffectTimeTextBox";
-            this.ItemEffectTimeTextBox.Size = new System.Drawing.Size(230, 19);
-            this.ItemEffectTimeTextBox.TabIndex = 13;
-            // 
             // ItemListBox
             // 
+            this.ItemListBox.AllowDrop = true;
             this.ItemListBox.FormattingEnabled = true;
             this.ItemListBox.ItemHeight = 12;
             this.ItemListBox.Location = new System.Drawing.Point(7, 229);
             this.ItemListBox.Name = "ItemListBox";
             this.ItemListBox.Size = new System.Drawing.Size(245, 280);
             this.ItemListBox.TabIndex = 12;
+            this.ItemListBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.BgListBox_DragDrop);
+            this.ItemListBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.BgListBox_DragEnter);
             // 
             // ItemEffectComboBox
             // 
@@ -927,6 +1236,25 @@
             this.bgmPage.Text = "BGM";
             this.bgmPage.UseVisualStyleBackColor = true;
             // 
+            // BGMButton
+            // 
+            this.BGMButton.Location = new System.Drawing.Point(449, 17);
+            this.BGMButton.Name = "BGMButton";
+            this.BGMButton.Size = new System.Drawing.Size(21, 21);
+            this.BGMButton.TabIndex = 5;
+            this.BGMButton.Text = "...";
+            this.BGMButton.UseVisualStyleBackColor = true;
+            this.BGMButton.Click += new System.EventHandler(this.BGMButton_Click);
+            // 
+            // BGMComboBox
+            // 
+            this.BGMComboBox.FormattingEnabled = true;
+            this.BGMComboBox.Location = new System.Drawing.Point(7, 17);
+            this.BGMComboBox.Name = "BGMComboBox";
+            this.BGMComboBox.Size = new System.Drawing.Size(436, 20);
+            this.BGMComboBox.TabIndex = 4;
+            this.BGMComboBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ComboBox_KeyDown);
+            // 
             // BgmAgreeButton
             // 
             this.BgmAgreeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -949,6 +1277,16 @@
             this.sePage.TabIndex = 14;
             this.sePage.Text = "効果音";
             this.sePage.UseVisualStyleBackColor = true;
+            // 
+            // SEButton
+            // 
+            this.SEButton.Location = new System.Drawing.Point(449, 17);
+            this.SEButton.Name = "SEButton";
+            this.SEButton.Size = new System.Drawing.Size(21, 21);
+            this.SEButton.TabIndex = 5;
+            this.SEButton.Text = "...";
+            this.SEButton.UseVisualStyleBackColor = true;
+            this.SEButton.Click += new System.EventHandler(this.SEButton_Click);
             // 
             // SeComboBox
             // 
@@ -1094,266 +1432,9 @@
             // 
             this.ScriptLoadOpenFileDialog.FileName = "ScriptLoadOpenFileDialog";
             // 
-            // SEButton
-            // 
-            this.SEButton.Location = new System.Drawing.Point(449, 17);
-            this.SEButton.Name = "SEButton";
-            this.SEButton.Size = new System.Drawing.Size(21, 21);
-            this.SEButton.TabIndex = 5;
-            this.SEButton.Text = "...";
-            this.SEButton.UseVisualStyleBackColor = true;
-            this.SEButton.Click += new System.EventHandler(this.SEButton_Click);
-            // 
             // SEBgmFileDialog
             // 
             this.SEBgmFileDialog.FileName = "SEBgmFileDialog";
-            // 
-            // BGMComboBox
-            // 
-            this.BGMComboBox.FormattingEnabled = true;
-            this.BGMComboBox.Location = new System.Drawing.Point(7, 17);
-            this.BGMComboBox.Name = "BGMComboBox";
-            this.BGMComboBox.Size = new System.Drawing.Size(436, 20);
-            this.BGMComboBox.TabIndex = 4;
-            this.BGMComboBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ComboBox_KeyDown);
-            // 
-            // BGMButton
-            // 
-            this.BGMButton.Location = new System.Drawing.Point(449, 17);
-            this.BGMButton.Name = "BGMButton";
-            this.BGMButton.Size = new System.Drawing.Size(21, 21);
-            this.BGMButton.TabIndex = 5;
-            this.BGMButton.Text = "...";
-            this.BGMButton.UseVisualStyleBackColor = true;
-            this.BGMButton.Click += new System.EventHandler(this.BGMButton_Click);
-            // 
-            // IfFlagGroupBox1
-            // 
-            this.IfFlagGroupBox1.Controls.Add(this.IfFlagNameComboBox1);
-            this.IfFlagGroupBox1.Controls.Add(this.IfSelectTypeComboBox1);
-            this.IfFlagGroupBox1.Controls.Add(this.IfFlagNumericUpDown1);
-            this.IfFlagGroupBox1.Location = new System.Drawing.Point(6, 57);
-            this.IfFlagGroupBox1.Name = "IfFlagGroupBox1";
-            this.IfFlagGroupBox1.Size = new System.Drawing.Size(476, 74);
-            this.IfFlagGroupBox1.TabIndex = 6;
-            this.IfFlagGroupBox1.TabStop = false;
-            this.IfFlagGroupBox1.Text = "フラグ1";
-            // 
-            // IfFlagGroupBox2
-            // 
-            this.IfFlagGroupBox2.Controls.Add(this.IfFlagGroupComboBox1);
-            this.IfFlagGroupBox2.Controls.Add(this.IfFlagNameComboBox2);
-            this.IfFlagGroupBox2.Controls.Add(this.IfSelectTypeComboBox2);
-            this.IfFlagGroupBox2.Controls.Add(this.IfFlagNumericUpDown2);
-            this.IfFlagGroupBox2.Location = new System.Drawing.Point(6, 137);
-            this.IfFlagGroupBox2.Name = "IfFlagGroupBox2";
-            this.IfFlagGroupBox2.Size = new System.Drawing.Size(476, 95);
-            this.IfFlagGroupBox2.TabIndex = 7;
-            this.IfFlagGroupBox2.TabStop = false;
-            this.IfFlagGroupBox2.Text = "フラグ2";
-            this.IfFlagGroupBox2.Visible = false;
-            // 
-            // IfFlagNameComboBox2
-            // 
-            this.IfFlagNameComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.IfFlagNameComboBox2.FormattingEnabled = true;
-            this.IfFlagNameComboBox2.Location = new System.Drawing.Point(6, 42);
-            this.IfFlagNameComboBox2.Name = "IfFlagNameComboBox2";
-            this.IfFlagNameComboBox2.Size = new System.Drawing.Size(464, 20);
-            this.IfFlagNameComboBox2.TabIndex = 2;
-            // 
-            // IfSelectTypeComboBox2
-            // 
-            this.IfSelectTypeComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.IfSelectTypeComboBox2.FormattingEnabled = true;
-            this.IfSelectTypeComboBox2.Location = new System.Drawing.Point(6, 68);
-            this.IfSelectTypeComboBox2.Name = "IfSelectTypeComboBox2";
-            this.IfSelectTypeComboBox2.Size = new System.Drawing.Size(318, 20);
-            this.IfSelectTypeComboBox2.TabIndex = 3;
-            // 
-            // IfFlagNumericUpDown2
-            // 
-            this.IfFlagNumericUpDown2.Location = new System.Drawing.Point(328, 68);
-            this.IfFlagNumericUpDown2.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.IfFlagNumericUpDown2.Name = "IfFlagNumericUpDown2";
-            this.IfFlagNumericUpDown2.Size = new System.Drawing.Size(142, 19);
-            this.IfFlagNumericUpDown2.TabIndex = 4;
-            // 
-            // IfFlagGroupBox3
-            // 
-            this.IfFlagGroupBox3.Controls.Add(this.IfFlagGroupComboBox2);
-            this.IfFlagGroupBox3.Controls.Add(this.IfFlagNameComboBox3);
-            this.IfFlagGroupBox3.Controls.Add(this.IfSelectTypeComboBox3);
-            this.IfFlagGroupBox3.Controls.Add(this.IfFlagNumericUpDown3);
-            this.IfFlagGroupBox3.Location = new System.Drawing.Point(6, 238);
-            this.IfFlagGroupBox3.Name = "IfFlagGroupBox3";
-            this.IfFlagGroupBox3.Size = new System.Drawing.Size(476, 95);
-            this.IfFlagGroupBox3.TabIndex = 7;
-            this.IfFlagGroupBox3.TabStop = false;
-            this.IfFlagGroupBox3.Text = "フラグ3";
-            this.IfFlagGroupBox3.Visible = false;
-            // 
-            // IfFlagNameComboBox3
-            // 
-            this.IfFlagNameComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.IfFlagNameComboBox3.FormattingEnabled = true;
-            this.IfFlagNameComboBox3.Location = new System.Drawing.Point(6, 42);
-            this.IfFlagNameComboBox3.Name = "IfFlagNameComboBox3";
-            this.IfFlagNameComboBox3.Size = new System.Drawing.Size(464, 20);
-            this.IfFlagNameComboBox3.TabIndex = 2;
-            // 
-            // IfSelectTypeComboBox3
-            // 
-            this.IfSelectTypeComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.IfSelectTypeComboBox3.FormattingEnabled = true;
-            this.IfSelectTypeComboBox3.Location = new System.Drawing.Point(6, 68);
-            this.IfSelectTypeComboBox3.Name = "IfSelectTypeComboBox3";
-            this.IfSelectTypeComboBox3.Size = new System.Drawing.Size(318, 20);
-            this.IfSelectTypeComboBox3.TabIndex = 3;
-            // 
-            // IfFlagNumericUpDown3
-            // 
-            this.IfFlagNumericUpDown3.Location = new System.Drawing.Point(328, 68);
-            this.IfFlagNumericUpDown3.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.IfFlagNumericUpDown3.Name = "IfFlagNumericUpDown3";
-            this.IfFlagNumericUpDown3.Size = new System.Drawing.Size(142, 19);
-            this.IfFlagNumericUpDown3.TabIndex = 4;
-            // 
-            // IfFlagGroupBox4
-            // 
-            this.IfFlagGroupBox4.Controls.Add(this.IfFlagGroupComboBox3);
-            this.IfFlagGroupBox4.Controls.Add(this.IfFlagNameComboBox4);
-            this.IfFlagGroupBox4.Controls.Add(this.IfSelectTypeComboBox4);
-            this.IfFlagGroupBox4.Controls.Add(this.IfFlagNumericUpDown4);
-            this.IfFlagGroupBox4.Location = new System.Drawing.Point(6, 339);
-            this.IfFlagGroupBox4.Name = "IfFlagGroupBox4";
-            this.IfFlagGroupBox4.Size = new System.Drawing.Size(476, 95);
-            this.IfFlagGroupBox4.TabIndex = 7;
-            this.IfFlagGroupBox4.TabStop = false;
-            this.IfFlagGroupBox4.Text = "フラグ4";
-            this.IfFlagGroupBox4.Visible = false;
-            // 
-            // IfFlagNameComboBox4
-            // 
-            this.IfFlagNameComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.IfFlagNameComboBox4.FormattingEnabled = true;
-            this.IfFlagNameComboBox4.Location = new System.Drawing.Point(6, 43);
-            this.IfFlagNameComboBox4.Name = "IfFlagNameComboBox4";
-            this.IfFlagNameComboBox4.Size = new System.Drawing.Size(464, 20);
-            this.IfFlagNameComboBox4.TabIndex = 2;
-            // 
-            // IfSelectTypeComboBox4
-            // 
-            this.IfSelectTypeComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.IfSelectTypeComboBox4.FormattingEnabled = true;
-            this.IfSelectTypeComboBox4.Location = new System.Drawing.Point(6, 69);
-            this.IfSelectTypeComboBox4.Name = "IfSelectTypeComboBox4";
-            this.IfSelectTypeComboBox4.Size = new System.Drawing.Size(318, 20);
-            this.IfSelectTypeComboBox4.TabIndex = 3;
-            // 
-            // IfFlagNumericUpDown4
-            // 
-            this.IfFlagNumericUpDown4.Location = new System.Drawing.Point(328, 69);
-            this.IfFlagNumericUpDown4.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.IfFlagNumericUpDown4.Name = "IfFlagNumericUpDown4";
-            this.IfFlagNumericUpDown4.Size = new System.Drawing.Size(142, 19);
-            this.IfFlagNumericUpDown4.TabIndex = 4;
-            // 
-            // IfFlagGroupBox5
-            // 
-            this.IfFlagGroupBox5.Controls.Add(this.IfFlagGroupComboBox4);
-            this.IfFlagGroupBox5.Controls.Add(this.IfFlagNameComboBox5);
-            this.IfFlagGroupBox5.Controls.Add(this.IfSelectTypeComboBox5);
-            this.IfFlagGroupBox5.Controls.Add(this.IfFlagNumericUpDown5);
-            this.IfFlagGroupBox5.Location = new System.Drawing.Point(6, 440);
-            this.IfFlagGroupBox5.Name = "IfFlagGroupBox5";
-            this.IfFlagGroupBox5.Size = new System.Drawing.Size(476, 95);
-            this.IfFlagGroupBox5.TabIndex = 7;
-            this.IfFlagGroupBox5.TabStop = false;
-            this.IfFlagGroupBox5.Text = "フラグ5";
-            this.IfFlagGroupBox5.Visible = false;
-            // 
-            // IfFlagNameComboBox5
-            // 
-            this.IfFlagNameComboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.IfFlagNameComboBox5.FormattingEnabled = true;
-            this.IfFlagNameComboBox5.Location = new System.Drawing.Point(6, 43);
-            this.IfFlagNameComboBox5.Name = "IfFlagNameComboBox5";
-            this.IfFlagNameComboBox5.Size = new System.Drawing.Size(464, 20);
-            this.IfFlagNameComboBox5.TabIndex = 2;
-            // 
-            // IfSelectTypeComboBox5
-            // 
-            this.IfSelectTypeComboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.IfSelectTypeComboBox5.FormattingEnabled = true;
-            this.IfSelectTypeComboBox5.Location = new System.Drawing.Point(6, 69);
-            this.IfSelectTypeComboBox5.Name = "IfSelectTypeComboBox5";
-            this.IfSelectTypeComboBox5.Size = new System.Drawing.Size(318, 20);
-            this.IfSelectTypeComboBox5.TabIndex = 3;
-            // 
-            // IfFlagNumericUpDown5
-            // 
-            this.IfFlagNumericUpDown5.Location = new System.Drawing.Point(328, 69);
-            this.IfFlagNumericUpDown5.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.IfFlagNumericUpDown5.Name = "IfFlagNumericUpDown5";
-            this.IfFlagNumericUpDown5.Size = new System.Drawing.Size(142, 19);
-            this.IfFlagNumericUpDown5.TabIndex = 4;
-            // 
-            // IfFlagGroupComboBox1
-            // 
-            this.IfFlagGroupComboBox1.FormattingEnabled = true;
-            this.IfFlagGroupComboBox1.Location = new System.Drawing.Point(203, 16);
-            this.IfFlagGroupComboBox1.Name = "IfFlagGroupComboBox1";
-            this.IfFlagGroupComboBox1.Size = new System.Drawing.Size(121, 20);
-            this.IfFlagGroupComboBox1.TabIndex = 5;
-            // 
-            // IfFlagGroupComboBox2
-            // 
-            this.IfFlagGroupComboBox2.FormattingEnabled = true;
-            this.IfFlagGroupComboBox2.Location = new System.Drawing.Point(203, 16);
-            this.IfFlagGroupComboBox2.Name = "IfFlagGroupComboBox2";
-            this.IfFlagGroupComboBox2.Size = new System.Drawing.Size(121, 20);
-            this.IfFlagGroupComboBox2.TabIndex = 5;
-            // 
-            // IfFlagGroupComboBox3
-            // 
-            this.IfFlagGroupComboBox3.FormattingEnabled = true;
-            this.IfFlagGroupComboBox3.Location = new System.Drawing.Point(203, 17);
-            this.IfFlagGroupComboBox3.Name = "IfFlagGroupComboBox3";
-            this.IfFlagGroupComboBox3.Size = new System.Drawing.Size(121, 20);
-            this.IfFlagGroupComboBox3.TabIndex = 5;
-            // 
-            // IfFlagGroupComboBox4
-            // 
-            this.IfFlagGroupComboBox4.FormattingEnabled = true;
-            this.IfFlagGroupComboBox4.Location = new System.Drawing.Point(203, 17);
-            this.IfFlagGroupComboBox4.Name = "IfFlagGroupComboBox4";
-            this.IfFlagGroupComboBox4.Size = new System.Drawing.Size(121, 20);
-            this.IfFlagGroupComboBox4.TabIndex = 5;
-            // 
-            // IfFlagJumpComboBox
-            // 
-            this.IfFlagJumpComboBox.FormattingEnabled = true;
-            this.IfFlagJumpComboBox.Location = new System.Drawing.Point(12, 543);
-            this.IfFlagJumpComboBox.Name = "IfFlagJumpComboBox";
-            this.IfFlagJumpComboBox.Size = new System.Drawing.Size(318, 20);
-            this.IfFlagJumpComboBox.TabIndex = 8;
             // 
             // Form1
             // 
@@ -1381,6 +1462,15 @@
             this.selectPage.ResumeLayout(false);
             this.selectPage.PerformLayout();
             this.ifPage.ResumeLayout(false);
+            this.IfFlagGroupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.IfFlagNumericUpDown5)).EndInit();
+            this.IfFlagGroupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.IfFlagNumericUpDown4)).EndInit();
+            this.IfFlagGroupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.IfFlagNumericUpDown3)).EndInit();
+            this.IfFlagGroupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.IfFlagNumericUpDown2)).EndInit();
+            this.IfFlagGroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.IfFlagNumericUpDown1)).EndInit();
             this.keywaitPage.ResumeLayout(false);
             this.waiotPage.ResumeLayout(false);
@@ -1388,10 +1478,16 @@
             this.endPage.ResumeLayout(false);
             this.bgPage.ResumeLayout(false);
             this.bgPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BgTimerNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BgNumericUpDown)).EndInit();
             this.charactorPage.ResumeLayout(false);
             this.charactorPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CharacterTimerNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CharacterAlphaNumericUpDown)).EndInit();
             this.itenPage.ResumeLayout(false);
             this.itenPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemTimerNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemAlphaNumericUpDown)).EndInit();
             this.flagPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.FlagNumericUpDown)).EndInit();
             this.bgmPage.ResumeLayout(false);
@@ -1401,15 +1497,6 @@
             this.loadPage.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.IfFlagGroupBox1.ResumeLayout(false);
-            this.IfFlagGroupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.IfFlagNumericUpDown2)).EndInit();
-            this.IfFlagGroupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.IfFlagNumericUpDown3)).EndInit();
-            this.IfFlagGroupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.IfFlagNumericUpDown4)).EndInit();
-            this.IfFlagGroupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.IfFlagNumericUpDown5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1467,7 +1554,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label BgColorLabel;
         private System.Windows.Forms.Label BgEffectTimeLabel;
-        private System.Windows.Forms.TextBox BgEffectTimeTextBox;
         private System.Windows.Forms.ListBox BgListBox;
         private System.Windows.Forms.ComboBox BgEffectComboBox;
         private System.Windows.Forms.ComboBox CharacterNameComboBox;
@@ -1477,7 +1563,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label CharacterColorLabel;
         private System.Windows.Forms.Label CharacterEffectTimeLabel;
-        private System.Windows.Forms.TextBox CharacterEffectTimeTextBox;
         private System.Windows.Forms.ListBox CharacterListBox;
         private System.Windows.Forms.ComboBox CharacterEffectComboBox;
         private System.Windows.Forms.ComboBox ItemNameComboBox;
@@ -1487,7 +1572,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label ItemColorLabel;
         private System.Windows.Forms.Label ItemEffectTimeLabel;
-        private System.Windows.Forms.TextBox ItemEffectTimeTextBox;
         private System.Windows.Forms.ListBox ItemListBox;
         private System.Windows.Forms.ComboBox ItemEffectComboBox;
         private System.Windows.Forms.NumericUpDown FlagNumericUpDown;
@@ -1533,6 +1617,16 @@
         private System.Windows.Forms.ComboBox IfFlagGroupComboBox2;
         private System.Windows.Forms.ComboBox IfFlagGroupComboBox1;
         private System.Windows.Forms.ComboBox IfFlagJumpComboBox;
+        private System.Windows.Forms.Label BgAlphaValueLabel;
+        private System.Windows.Forms.NumericUpDown BgNumericUpDown;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown CharacterAlphaNumericUpDown;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown ItemAlphaNumericUpDown;
+        private System.Windows.Forms.NumericUpDown BgTimerNumericUpDown;
+        private System.Windows.Forms.NumericUpDown CharacterTimerNumericUpDown;
+        private System.Windows.Forms.NumericUpDown ItemTimerNumericUpDown;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
 

@@ -64,6 +64,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GraphicModel.cs" />
     <Compile Include="IfModel.cs" />
     <Compile Include="ItemModel.cs" />
     <Compile Include="Jump.cs" />

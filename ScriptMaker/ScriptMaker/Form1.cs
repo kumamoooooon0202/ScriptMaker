@@ -69,6 +69,15 @@ namespace ScriptMaker
             };
             ifSelectComboList.ForEach(x => x.Items.AddRange(compareList));
             ifGroupComboList.ForEach(x => x.Items.AddRange(compareList2));
+
+            string[] imageEffectName =
+                new string[] {"idle", "dispon", "dispoff", "fadein",
+                "fadeout", "scroll"};
+            List<ComboBox> effectComboList = new List<ComboBox>()
+            {
+                BgEffectComboBox, CharacterEffectComboBox, ItemEffectComboBox
+            };
+            effectComboList.ForEach(x => x.Items.AddRange(imageEffectName));
         }
 
         private void ScriptListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -341,6 +350,10 @@ namespace ScriptMaker
                 FlagComboBox.Items.Add(FlagComboBox.Text);
                 AddIfFlagComboBox(FlagComboBox.Text);
             }
+            if (FlagComboBox.SelectedIndex < 0)
+            {
+                FlagComboBox.SelectedIndex = FlagComboBox.FindString(FlagComboBox.Text);
+            }
             AgreeFunctionWithComboBox("Flag", FlagComboBox, () =>
             {
                 flagModel.name = FlagComboBox.Items[FlagComboBox.SelectedIndex].ToString();
@@ -403,11 +416,13 @@ namespace ScriptMaker
             ComboBox cbox = (ComboBox)sender;
             if (e.KeyCode == Keys.Enter)
             {
-                if (!cbox.Items.Contains(SeComboBox.Text))
-                    cbox.Items.Add(SeComboBox.Text);
-                if (cbox.Name.Equals("FlagComboBox"))
+                if (!cbox.Items.Contains(cbox.Text))
                 {
-                    AddIfFlagComboBox(cbox.Text);
+                    cbox.Items.Add(cbox.Text);
+                    if (cbox.Name.Equals("FlagComboBox"))
+                    {
+                        AddIfFlagComboBox(cbox.Text);
+                    }
                 }
             }
         }
@@ -509,6 +524,15 @@ namespace ScriptMaker
 
         private void IfAgreeButton_Click(object sender, EventArgs e)
         {
+            List<ComboBox> ifFlagNameComboList = new List<ComboBox>()
+            {
+                IfFlagNameComboBox1,
+                IfFlagNameComboBox2,
+                IfFlagNameComboBox3,
+                IfFlagNameComboBox4,
+                IfFlagNameComboBox5,
+            };
+
             List<ComboBox> ifSelectComboList = new List<ComboBox>()
             {
                 IfSelectTypeComboBox1,
@@ -529,10 +553,116 @@ namespace ScriptMaker
             foreach(var i in Enumerable.Range(0, ifFlagGroupCount))
             {
                 var cheekFlag = new IfModel.CheckFlag();
-                cheekFlag.name = ifSelectComboList[i].Text;
-                cheekFlag.flag_type = CommonParam.
+                cheekFlag.name = ifFlagNameComboList[i].Text;
+                cheekFlag.flag_type = ifGroupComboList[i].Text;
+                cheekFlag.flagNum = (int)IfFlagNumericUpDown1.Value;
+                ifModel.flags.Add(cheekFlag);
+                if (i > 0)
+                {
+                    ifModel.flagCompare.Add(ifGroupComboList[i].Text);
+                }
+                ifModel.jump.label = IfFlagJumpComboBox.Text;
             }
-            ifModel.flags.AddRange();
+            var jsonText = JsonConvert.SerializeObject(ifModel);
+            // 保存
+            SetCommandScript("iff", jsonText);
         }
+
+        private void BgListBox_DragDrop(object sender, DragEventArgs e)
+        {
+            List<string> extNames = new List<string>()
+            {
+                ".jpg", ".png", "gif", ".psd"
+            };
+            Dictionary<string, ComboBox> nameBox = new Dictionary<string, ComboBox>()
+            {
+                { "BgListBox", BgNameComboBox },
+                { "CharacterListBox", CharacterNameComboBox},
+                { "ItemListBox", ItemNameComboBox}
+            };
+            ListBox lb = (ListBox)sender;
+            ComboBox cb = nameBox[lb.Name];
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+
+            foreach (var fname in files)
+            {
+                string ext = Path.GetExtension(fname).ToLower();
+                if (extNames.Any(x => x.Equals(ext)))
+                {
+                    lb.Items.Add(Path.GetFileName(fname));
+                    cb.Items.Add(Path.GetFileName(fname));
+                }
+            }
+        }
+
+        private void BgListBox_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.All;
+        }
+
+        private void BgColorChangeButton_Click(object sender, EventArgs e)
+        {
+            Button bt = (Button)sender;
+            Dictionary<string, TextBox> colorTextBox = new Dictionary<string, TextBox>()
+            {
+                { "BgAgreeButton", BgColorTextBox},
+                { "CharacterAgreeButton", CharacterColorTextBox},
+                { "ItemAgreeButton", ItemColorTextBox},
+            };
+            TextBox tb = colorTextBox[bt.Name];
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                tb.Text = ColorTranslator.ToHtml(colorDialog1.Color);
+            }
+        }
+
+        private void BgAgreeButton_Click(object sender, EventArgs e)
+        {
+            Button bt = (Button)sender;
+            Dictionary<string, TextBox> colorTextBox = new Dictionary<string, TextBox>()
+            {
+                { "BgAgreeButton", BgColorTextBox},
+                { "CharacterAgreeButton", CharacterColorTextBox},
+                { "ItemAgreeButton", ItemColorTextBox},
+            };
+            Dictionary<string, ComboBox> nameTextList = new Dictionary<string, ComboBox>()
+            {
+                { "BgAgreeButton", BgNameComboBox},
+                { "CharacterAgreeButton", CharacterNameComboBox},
+                { "ItemAgreeButton", ItemNameComboBox},
+            };
+            Dictionary<string, ComboBox> effectTextList = new Dictionary<string, ComboBox>()
+            {
+                { "BgAgreeButton", BgEffectComboBox},
+                { "CharacterAgreeButton", CharacterEffectComboBox},
+                { "ItemAgreeButton", ItemEffectComboBox},
+            };
+            Dictionary<string, NumericUpDown> timerList = new Dictionary<string, NumericUpDown>()
+            {
+                { "BgAgreeButton", BgTimerNumericUpDown},
+                { "CharacterAgreeButton", CharacterTimerNumericUpDown},
+                { "ItemAgreeButton", ItemTimerNumericUpDown},
+            };
+            Dictionary<string, NumericUpDown> alphaList = new Dictionary<string, NumericUpDown>()
+            {
+                { "BgAgreeButton", BgNumericUpDown},
+                { "CharacterAgreeButton", CharacterAlphaNumericUpDown},
+                { "ItemAgreeButton", ItemAlphaNumericUpDown},
+            };
+            Dictionary<string, string> requestName = new Dictionary<string, string>()
+            {
+                { "BgAgreeButton", "bg"},
+                { "CharacterAgreeButton", "character"},
+                { "ItemAgreeButton", "item"},
+            };
+            GraphicModel gModel = new GraphicModel();
+            gModel.fileName = nameTextList[bt.Name].Text;
+            gModel.display_mode = effectTextList[bt.Name].Text;
+            gModel.fade_timer = (float)timerList[bt.Name].Value;
+            gModel.alpha = (float)alphaList[bt.Name].Value;
+            gModel.color = colorTextBox[bt.Name].Text;
+            var jsonText = JsonConvert.SerializeObject(gModel);
+            SetCommandScript(requestName[bt.Name], jsonText);
+;        }
     }
 }

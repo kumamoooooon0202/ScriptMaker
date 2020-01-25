@@ -13,7 +13,7 @@ namespace ScriptMaker
             // 比較するフラグ名
             public string name = "";
             // 比較対象
-            public CommonParam.FlagCompareType flag_type = CommonParam.FlagCompareType.Equal;
+            public string flag_type;
             // 比較するフラグの数
             public int flagNum = 0;
         }
@@ -22,7 +22,7 @@ namespace ScriptMaker
         // 比較フラグメント
         public List<CheckFlag> flags = new List<CheckFlag>();
         // フラグ間の比較方法リスト
-        public List<CommonParam.FlagCompareType> flagCompare = new List<CommonParam.FlagCompareType>();
+        public List<string> flagCompare = new List<string>();
         // すべてが真の場合にジャンプする場所
         public Jump jump = null;
 
